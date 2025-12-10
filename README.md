@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# San Francisco Bay Area Appraisal Association | 舊金山灣區鑒寶協會
+
+Professional appraisal and authentication services for antiques, art, and collectibles in the San Francisco Bay Area.
+
+## Features
+
+- **Bilingual Support**: Full English and Chinese language support with URL-based routing
+- **Modern Design**: Clean, professional UI built with Tailwind CSS
+- **Responsive**: Works seamlessly on desktop, tablet, and mobile devices
+- **SEO Optimized**: Proper meta tags and semantic HTML
+- **Type-Safe**: Built with TypeScript for reliability
+
+## Pages
+
+- **Home**: Overview of services and pricing highlights
+- **Services**: Detailed information about all appraisal services
+- **Pricing**: Transparent pricing tiers for different service levels
+- **Contact**: Contact form and location information
+
+## Technology Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4
+- **Internationalization**: next-intl
+- **Deployment**: Vercel-ready
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ installed
+- npm or yarn package manager
+
+### Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The website will be available at:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- English: http://localhost:3001/en
+- Chinese: http://localhost:3001/zh
 
-## Learn More
+### Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+sfbayarea-appraisal/
+├── app/
+│   └── [locale]/
+│       ├── page.tsx          # Home page
+│       ├── services/         # Services page
+│       ├── pricing/          # Pricing page
+│       └── contact/          # Contact page
+├── messages/
+│   ├── en.json              # English translations
+│   └── zh.json              # Chinese translations
+├── i18n/
+│   ├── routing.ts           # Routing configuration
+│   └── request.ts           # Request configuration
+└── middleware.ts            # Internationalization middleware
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Internationalization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The website supports two languages with URL-based routing:
 
-## Deploy on Vercel
+- **English** (`/en`): Default language
+- **Chinese** (`/zh`): Traditional Chinese
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Translation files are located in the `/messages` directory.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Pricing Information
+
+All pricing is displayed in USD and includes:
+
+- Initial Consultation: $150
+- Single Item Appraisal: $200-500
+- Multiple Items (3-10): $150-400 per item
+- Collection Appraisal: $1,000+
+- Specialized Appraisal: $500-2,000
+- Insurance Documentation: $300-800
+
+## Deployment
+
+This project is optimized for deployment on Vercel:
+
+```bash
+# Deploy to Vercel
+npx vercel
+```
+
+Or connect your GitHub repository to Vercel for automatic deployments.
+
+## License
+
+© 2025 San Francisco Bay Area Appraisal Association. All rights reserved.
+
+## Contact
+
+- **Email**: info@sfbayareaappraisal.org
+- **Phone**: (415) 123-4567
+- **Location**: San Francisco Bay Area, CA
