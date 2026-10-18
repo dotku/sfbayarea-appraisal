@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import { Link, routing, usePathname } from '@/i18n/routing';
@@ -35,11 +35,11 @@ export default function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-30 border-b border-line bg-paper/95 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-8 px-4 sm:px-6">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-4 sm:h-16 sm:gap-8 sm:px-6">
         <Link href="/" className="flex items-center gap-2.5">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-sm bg-accent font-serif text-sm font-semibold tracking-tight text-accent-ink">PA</span>
+          <span className="grid h-8 w-8 shrink-0 place-items-center sm:h-9 sm:w-9 rounded-sm bg-accent font-serif text-sm font-semibold tracking-tight text-accent-ink">PA</span>
           <span className="leading-tight">
-            <span className="block font-serif text-base font-semibold sm:hidden">{t('brand.short')}</span>
+            <span className="block max-w-[11rem] font-serif text-[15px] font-semibold leading-tight sm:hidden">{t('brand.short')}</span>
             <span className="hidden whitespace-nowrap font-serif text-lg font-semibold sm:block">{t('brand.name')}</span>
             <span className="hidden whitespace-nowrap text-xs text-muted sm:block">{t('brand.en')}</span>
           </span>
@@ -70,7 +70,7 @@ export default function SiteHeader() {
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setOpen((o) => !o)}
-            className="rounded-sm border border-line px-3 py-1.5 text-sm"
+            className="rounded-sm border border-line px-2.5 py-1.5 text-sm"
           >
             {open ? t('nav.close') : t('nav.menu')}
           </button>
@@ -103,23 +103,73 @@ export default function SiteHeader() {
   );
 }
 
-const LOCALE_LABEL: Record<string, string> = { en: 'EN', es: 'ES', zh: '中文', fr: 'FR', ru: 'RU' };
+// Short code on the button, the language's own name in the list.
+const LOCALES: Record<string, { code: string; name: string }> = {
+  en: { code: 'EN', name: 'English' },
+  es: { code: 'ES', name: 'Español' },
+  zh: { code: '中文', name: '中文（繁體）' },
+  fr: { code: 'FR', name: 'Français' },
+  ru: { code: 'RU', name: 'Русский' },
+};
 
 function LocaleSwitch({ locale, pathname }: { locale: string; pathname: ReturnType<typeof usePathname> }) {
+  const t = useTranslations('nav');
   // Dynamic routes (/items/[no]) need their params to build the other-language URL.
   const params = useParams();
   const href = { pathname, params } as unknown as Parameters<typeof Link>[0]['href'];
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => setOpen(false), [locale, pathname]);
+  useEffect(() => {
+    if (!open) return;
+    const close = (e: MouseEvent | KeyboardEvent) => {
+      if (e instanceof KeyboardEvent ? e.key === 'Escape' : !ref.current?.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener('mousedown', close);
+    document.addEventListener('keydown', close);
+    return () => {
+      document.removeEventListener('mousedown', close);
+      document.removeEventListener('keydown', close);
+    };
+  }, [open]);
+
   return (
-    <span className="flex items-center whitespace-nowrap text-sm">
-      {routing.locales.map((l) =>
-        l === locale ? (
-          <span key={l} className="px-1.5 py-2 font-semibold text-ink">{LOCALE_LABEL[l]}</span>
-        ) : (
-          <Link key={l} href={href} locale={l} className="px-1.5 py-2 text-muted hover:text-ink">
-            {LOCALE_LABEL[l]}
-          </Link>
-        ),
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        aria-haspopup="menu"
+        aria-expanded={open}
+        aria-label={t('language')}
+        onClick={() => setOpen((o) => !o)}
+        className="flex items-center gap-1.5 rounded-sm border border-line px-2.5 py-1.5 text-sm text-ink/80 hover:border-ink/40 hover:text-ink"
+      >
+        <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9M12 3c-2.5 2.6-3.8 5.6-3.8 9s1.3 6.4 3.8 9" />
+        </svg>
+        <span className="whitespace-nowrap">{LOCALES[locale]?.code ?? locale.toUpperCase()}</span>
+        <svg aria-hidden="true" viewBox="0 0 20 20" className={`h-3 w-3 transition ${open ? 'rotate-180' : ''}`} fill="currentColor">
+          <path d="M5.5 7.5 10 12l4.5-4.5" stroke="currentColor" strokeWidth="1.6" fill="none" />
+        </svg>
+      </button>
+      {open && (
+        <ul role="menu" className="absolute right-0 z-40 mt-1 min-w-40 overflow-hidden rounded-sm border border-line bg-card py-1 text-sm shadow-lg">
+          {routing.locales.map((l) => (
+            <li key={l} role="none">
+              {l === locale ? (
+                <span role="menuitem" aria-current="true" className="flex items-center justify-between gap-3 px-3 py-2 font-semibold text-accent">
+                  {LOCALES[l].name} <span aria-hidden="true">✓</span>
+                </span>
+              ) : (
+                <Link role="menuitem" href={href} locale={l} lang={l === 'zh' ? 'zh-Hant' : l} className="block px-3 py-2 hover:bg-paper">
+                  {LOCALES[l].name}
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
       )}
-    </span>
+    </div>
   );
 }

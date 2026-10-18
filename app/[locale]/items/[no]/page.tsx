@@ -36,21 +36,26 @@ export default async function ItemPage({ params }: { params: Promise<{ no: strin
   ).filter(([, v]) => v);
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-10">
       <Link href="/items" className="text-sm text-muted hover:text-ink">← {t('back')}</Link>
 
-      <div className="mt-6 grid gap-10 md:grid-cols-[1.2fr_1fr]">
-        <div className="space-y-3">
-          {item.images.length === 0 && <div className="aspect-square rounded-sm bg-[#ece7df]" />}
+      <div className="mt-4 grid gap-6 sm:mt-6 md:grid-cols-[1.2fr_1fr] md:gap-10">
+        <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 [scrollbar-width:none] md:mx-0 md:block md:space-y-3 md:overflow-visible md:px-0">
+          {item.images.length === 0 && <div className="aspect-square w-full rounded-sm bg-[#ece7df]" />}
           {item.images.map((src, i) => (
             // eslint-disable-next-line @next/next/no-img-element
-            <img key={src} src={src} alt={`${title} ${i + 1}`} className="w-full rounded-sm border border-line bg-[#ece7df] object-contain" />
+            <img
+              key={src}
+              src={src}
+              alt={`${title} ${i + 1}`}
+              className={`aspect-square shrink-0 snap-center rounded-sm border border-line bg-[#ece7df] object-contain md:aspect-auto md:w-full ${item.images.length > 1 ? 'w-[85%]' : 'w-full'}`}
+            />
           ))}
         </div>
 
         <div className="md:sticky md:top-24 md:self-start">
           <p className="text-sm text-gold">{t(`cat.${item.category}`)} · {t(item.stage)}</p>
-          <h1 className="mt-2 font-serif text-3xl font-bold leading-tight">{title}</h1>
+          <h1 className="mt-2 font-serif text-2xl font-bold leading-tight sm:text-3xl">{title}</h1>
           {est && (
             <p className="mt-4 text-lg">
               <span className="text-muted">{t('estimate')}</span> <span className="font-semibold">{est}</span>
