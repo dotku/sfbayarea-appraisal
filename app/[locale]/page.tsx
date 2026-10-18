@@ -1,171 +1,108 @@
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import { COLLECTION } from '@/lib/collection';
+import CollectionGrid from '@/components/CollectionGrid';
+
+const FEATURED = ['longquan-bottle', 'qing-jade-box', 'ni-zan-mount-yu', 'huanghuali-armchair', 'ritual-altar-set', 'cloisonne-table-screen'];
+const CATEGORY_KEYS = ['ceramics', 'jade', 'painting', 'bronze', 'furniture', 'consulting'] as const;
 
 export default function HomePage() {
   const t = useTranslations();
+  const featured = FEATURED.map((id) => COLLECTION.find((c) => c.id === id)!);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      {/* Navigation */}
-      <nav className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
-            <div className="flex-shrink-0 font-bold text-xl text-slate-900">
-              {t('home.title')}
-            </div>
-            <div className="hidden md:flex space-x-8">
-              <Link href="/" className="text-slate-700 hover:text-slate-900">
-                {t('nav.home')}
-              </Link>
-              <Link href="/services" className="text-slate-700 hover:text-slate-900">
-                {t('nav.services')}
-              </Link>
-              <Link href="/pricing" className="text-slate-700 hover:text-slate-900">
-                {t('nav.pricing')}
-              </Link>
-              <Link href="/contact" className="text-slate-700 hover:text-slate-900">
-                {t('nav.contact')}
-              </Link>
-            </div>
-            <div className="flex space-x-4">
-              <Link href="/" locale="en" className="text-sm text-slate-600 hover:text-slate-900">
-                EN
-              </Link>
-              <span className="text-slate-300">|</span>
-              <Link href="/" locale="zh" className="text-sm text-slate-600 hover:text-slate-900">
-                中文
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+    <>
+      <p className="border-b border-line bg-card px-4 py-2 text-center text-xs text-muted sm:text-sm">{t('status')}</p>
 
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
-            {t('home.title')}
-          </h1>
-          <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
-            {t('home.description')}
-          </p>
-          <div className="flex justify-center gap-4">
-            <Link
-              href="/services"
-              className="bg-slate-900 text-white px-8 py-3 rounded-lg hover:bg-slate-800 transition"
-            >
-              {t('home.services')}
+      <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.15fr_1fr] md:py-20">
+        <div>
+          <p className="text-sm tracking-wide text-gold">{t('home.eyebrow')}</p>
+          <h1 className="mt-3 font-serif text-3xl font-bold leading-tight sm:text-5xl">{t('home.title')}</h1>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-ink/80 sm:text-lg">{t('home.lead')}</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/contact" className="rounded-sm bg-accent px-6 py-3 text-accent-ink hover:opacity-90">
+              {t('home.ctaPrimary')}
             </Link>
-            <Link
-              href="/pricing"
-              className="border border-slate-300 text-slate-700 px-8 py-3 rounded-lg hover:border-slate-400 transition"
-            >
-              {t('home.pricing')}
+            <Link href="/collection" className="rounded-sm border border-ink/30 px-6 py-3 hover:border-ink">
+              {t('home.ctaSecondary')}
             </Link>
           </div>
+          <p className="mt-3 text-sm text-muted">{t('home.ctaNote')}</p>
         </div>
+        <figure>
+          <div className="relative mx-auto aspect-3/4 w-full max-w-sm overflow-hidden rounded-sm bg-[#e9e5df]">
+            <Image
+              src="/collection/hero-39666.jpg"
+              alt={t('home.heroCaption')}
+              fill
+              priority
+              sizes="(min-width: 768px) 384px, 90vw"
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="mx-auto mt-2 max-w-sm text-sm text-ink/70">{t('home.heroCaption')}</figcaption>
+        </figure>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">
-            {t('services.title')}
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { key: 'antiques', icon: '🏺' },
-              { key: 'artworks', icon: '🖼️' },
-              { key: 'jewelry', icon: '💎' },
-              { key: 'calligraphy', icon: '✍️' },
-              { key: 'porcelain', icon: '🏺' },
-              { key: 'consultation', icon: '💼' },
-            ].map((service) => (
-              <div
-                key={service.key}
-                className="p-6 border border-slate-200 rounded-lg hover:shadow-lg transition"
-              >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">
-                  {t(`services.${service.key}`)}
-                </h3>
-                <p className="text-slate-600">
-                  {t(`services.${service.key}Desc`)}
-                </p>
+      <section className="border-y border-line bg-card">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+          <h2 className="font-serif text-2xl font-semibold sm:text-3xl">{t('home.servicesTitle')}</h2>
+          <div className="mt-8 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+            {CATEGORY_KEYS.map((k) => (
+              <div key={k} className="bg-card p-6">
+                <h3 className="font-serif text-lg font-semibold">{t(`services.${k}`)}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-ink/85">{t(`services.${k}Text`)}</p>
               </div>
             ))}
           </div>
+          <Link href="/services" className="mt-6 inline-block text-sm text-accent hover:underline">
+            {t('nav.services')} →
+          </Link>
         </div>
       </section>
 
-      {/* Pricing Highlight */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-slate-900 text-white rounded-2xl p-12 text-center">
-            <h2 className="text-3xl font-bold mb-4">{t('pricing.title')}</h2>
-            <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
-              {t('pricing.subtitle')}
-            </p>
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-slate-800 p-6 rounded-lg">
-                <div className="text-sm text-slate-400 mb-2">
-                  {t('pricing.consultation')}
-                </div>
-                <div className="text-3xl font-bold mb-2">
-                  {t('pricing.consultationPrice')}
-                </div>
-                <div className="text-sm text-slate-400">
-                  {t('pricing.consultationDesc')}
-                </div>
-              </div>
-              <div className="bg-slate-800 p-6 rounded-lg">
-                <div className="text-sm text-slate-400 mb-2">
-                  {t('pricing.singleItem')}
-                </div>
-                <div className="text-3xl font-bold mb-2">
-                  {t('pricing.singleItemPrice')}
-                </div>
-                <div className="text-sm text-slate-400">
-                  {t('pricing.singleItemDesc')}
-                </div>
-              </div>
-              <div className="bg-slate-800 p-6 rounded-lg">
-                <div className="text-sm text-slate-400 mb-2">
-                  {t('pricing.specialized')}
-                </div>
-                <div className="text-3xl font-bold mb-2">
-                  {t('pricing.specializedPrice')}
-                </div>
-                <div className="text-sm text-slate-400">
-                  {t('pricing.specializedDesc')}
-                </div>
-              </div>
-            </div>
-            <Link
-              href="/pricing"
-              className="inline-block bg-white text-slate-900 px-8 py-3 rounded-lg hover:bg-slate-100 transition font-semibold"
-            >
-              {t('nav.pricing')} →
-            </Link>
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 className="font-serif text-2xl font-semibold sm:text-3xl">{t('home.collectionTitle')}</h2>
+            <p className="mt-2 text-ink/75">{t('home.collectionLead')}</p>
           </div>
+          <Link href="/collection" className="text-sm text-accent hover:underline">
+            {t('home.viewAll')} →
+          </Link>
+        </div>
+        <div className="mt-8">
+          <CollectionGrid items={featured} filter={false} />
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-slate-400 mb-4">{t('footer.copyright')}</p>
-          <div className="flex justify-center gap-8 text-sm">
-            <Link href="/contact" className="text-slate-400 hover:text-white">
-              {t('nav.contact')}
-            </Link>
-            <span className="text-slate-600">•</span>
-            <span className="text-slate-400">{t('footer.email')}: {t('footer.emailValue')}</span>
-            <span className="text-slate-600">•</span>
-            <span className="text-slate-400">{t('footer.phone')}: {t('footer.phoneValue')}</span>
-          </div>
+      <section className="border-y border-line bg-card">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+          <h2 className="font-serif text-2xl font-semibold sm:text-3xl">{t('home.processTitle')}</h2>
+          <ol className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[1, 2, 3, 4].map((n) => (
+              <li key={n} className="border-t-2 border-accent pt-4">
+                <span className="font-serif text-3xl text-accent/80">{n}</span>
+                <h3 className="mt-1 font-semibold">{t(`home.step${n}`)}</h3>
+                <p className="mt-1 text-[15px] leading-relaxed text-ink/85">{t(`home.step${n}Text`)}</p>
+              </li>
+            ))}
+          </ol>
         </div>
-      </footer>
-    </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pt-14 sm:px-6">
+        <div className="flex flex-col items-start justify-between gap-6 rounded-sm bg-ink p-8 text-white sm:flex-row sm:items-center sm:p-10">
+          <div>
+            <h2 className="font-serif text-2xl font-semibold">{t('home.pricingTitle')}</h2>
+            <p className="mt-2 text-white/75">{t('home.pricingLead')}</p>
+          </div>
+          <Link href="/pricing" className="shrink-0 rounded-sm bg-white px-6 py-3 text-ink hover:bg-white/90">
+            {t('home.pricingCta')}
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }

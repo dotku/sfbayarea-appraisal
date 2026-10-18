@@ -1,157 +1,72 @@
+import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 
-export default function ServicesPage() {
-  const t = useTranslations();
+const CATEGORY_KEYS = ['ceramics', 'jade', 'painting', 'bronze', 'furniture', 'consulting'] as const;
+const PURPOSE_KEYS = ['insurance', 'estate', 'division', 'sale'] as const;
 
-  const services = [
-    {
-      key: 'antiques',
-      icon: '🏺',
-      color: 'from-amber-500 to-orange-600'
-    },
-    {
-      key: 'artworks',
-      icon: '🖼️',
-      color: 'from-purple-500 to-pink-600'
-    },
-    {
-      key: 'jewelry',
-      icon: '💎',
-      color: 'from-blue-500 to-cyan-600'
-    },
-    {
-      key: 'calligraphy',
-      icon: '✍️',
-      color: 'from-green-500 to-emerald-600'
-    },
-    {
-      key: 'porcelain',
-      icon: '🏺',
-      color: 'from-red-500 to-rose-600'
-    },
-    {
-      key: 'consultation',
-      icon: '💼',
-      color: 'from-slate-500 to-gray-600'
-    }
-  ];
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'services' });
+  return { title: t('title'), description: t('lead') };
+}
+
+export default function ServicesPage() {
+  const t = useTranslations('services');
+  const nav = useTranslations('nav');
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      {/* Navigation */}
-      <nav className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
-            <Link href="/" className="flex-shrink-0 font-bold text-xl text-slate-900">
-              {t('home.title')}
-            </Link>
-            <div className="hidden md:flex space-x-8">
-              <Link href="/" className="text-slate-700 hover:text-slate-900">
-                {t('nav.home')}
-              </Link>
-              <Link href="/services" className="text-slate-900 font-semibold border-b-2 border-slate-900">
-                {t('nav.services')}
-              </Link>
-              <Link href="/pricing" className="text-slate-700 hover:text-slate-900">
-                {t('nav.pricing')}
-              </Link>
-              <Link href="/contact" className="text-slate-700 hover:text-slate-900">
-                {t('nav.contact')}
-              </Link>
-            </div>
-            <div className="flex space-x-4">
-              <Link href="/services" locale="en" className="text-sm text-slate-600 hover:text-slate-900">
-                EN
-              </Link>
-              <span className="text-slate-300">|</span>
-              <Link href="/services" locale="zh" className="text-sm text-slate-600 hover:text-slate-900">
-                中文
-              </Link>
-            </div>
+    <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+      <h1 className="font-serif text-3xl font-bold sm:text-4xl">{t('title')}</h1>
+      <p className="mt-3 max-w-3xl leading-relaxed text-ink/80">{t('lead')}</p>
+
+      <h2 className="mt-12 font-serif text-2xl font-semibold">{t('categoriesTitle')}</h2>
+      <div className="mt-6 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+        {CATEGORY_KEYS.map((k) => (
+          <div key={k} className="bg-card p-6">
+            <h3 className="font-serif text-lg font-semibold">{t(k)}</h3>
+            <p className="mt-2 text-[15px] leading-relaxed text-ink/85">{t(`${k}Text`)}</p>
           </div>
-        </div>
-      </nav>
+        ))}
+      </div>
 
-      {/* Hero Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            {t('services.title')}
-          </h1>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            {t('services.subtitle')}
-          </p>
-        </div>
-      </section>
+      <h2 className="mt-14 font-serif text-2xl font-semibold">{t('purposesTitle')}</h2>
+      <div className="mt-6 grid gap-6 sm:grid-cols-2">
+        {PURPOSE_KEYS.map((k) => (
+          <div key={k} className="border-l-2 border-accent pl-4">
+            <h3 className="font-semibold">{t(k)}</h3>
+            <p className="mt-1 text-[15px] leading-relaxed text-ink/85">{t(`${k}Text`)}</p>
+          </div>
+        ))}
+      </div>
 
-      {/* Services Grid */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service) => (
-              <div
-                key={service.key}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-              >
-                <div className={`bg-gradient-to-r ${service.color} p-6 text-white`}>
-                  <div className="text-5xl mb-4">{service.icon}</div>
-                  <h3 className="text-2xl font-bold">
-                    {t(`services.${service.key}`)}
-                  </h3>
-                </div>
-                <div className="p-6">
-                  <p className="text-slate-600 text-lg leading-relaxed">
-                    {t(`services.${service.key}Desc`)}
-                  </p>
-                </div>
-              </div>
+      <div className="mt-14 grid gap-8 md:grid-cols-2">
+        <section className="rounded-sm border border-line bg-card p-6">
+          <h2 className="font-serif text-xl font-semibold">{t('deliverablesTitle')}</h2>
+          <ul className="mt-4 space-y-2 text-sm">
+            {[1, 2, 3, 4].map((n) => (
+              <li key={n} className="flex gap-2">
+                <span className="text-accent">✓</span>
+                {t(`deliverable${n}`)}
+              </li>
             ))}
-          </div>
-        </div>
-      </section>
+          </ul>
+        </section>
+        <section className="rounded-sm border border-line bg-card p-6">
+          <h2 className="font-serif text-xl font-semibold">{t('standardsTitle')}</h2>
+          <p className="mt-4 text-sm leading-relaxed text-ink/80">{t('standardsText')}</p>
+        </section>
+      </div>
 
-      {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">
-            {t('contact.getInTouch')}
-          </h2>
-          <p className="text-xl text-slate-600 mb-8">
-            {t('contact.subtitle')}
-          </p>
-          <div className="flex justify-center gap-4">
-            <Link
-              href="/pricing"
-              className="bg-slate-900 text-white px-8 py-3 rounded-lg hover:bg-slate-800 transition font-semibold"
-            >
-              {t('nav.pricing')}
-            </Link>
-            <Link
-              href="/contact"
-              className="border-2 border-slate-900 text-slate-900 px-8 py-3 rounded-lg hover:bg-slate-900 hover:text-white transition font-semibold"
-            >
-              {t('nav.contact')}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-slate-400 mb-4">{t('footer.copyright')}</p>
-          <div className="flex justify-center gap-8 text-sm">
-            <Link href="/contact" className="text-slate-400 hover:text-white">
-              {t('nav.contact')}
-            </Link>
-            <span className="text-slate-600">•</span>
-            <span className="text-slate-400">{t('footer.email')}: {t('footer.emailValue')}</span>
-            <span className="text-slate-600">•</span>
-            <span className="text-slate-400">{t('footer.phone')}: {t('footer.phoneValue')}</span>
-          </div>
-        </div>
-      </footer>
+      <div className="mt-12 flex flex-wrap gap-3">
+        <Link href="/contact" className="rounded-sm bg-accent px-6 py-3 text-accent-ink hover:opacity-90">
+          {nav('contact')}
+        </Link>
+        <Link href="/pricing" className="rounded-sm border border-ink/30 px-6 py-3 hover:border-ink">
+          {nav('pricing')}
+        </Link>
+      </div>
     </div>
   );
 }

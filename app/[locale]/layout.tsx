@@ -1,25 +1,28 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata } from 'next';
+import { Noto_Serif_TC } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import "./globals.css";
+import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
+import './globals.css';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const serif = Noto_Serif_TC({
+  variable: '--font-noto-serif',
+  weight: ['600', '700'],
+  subsets: ['latin'],
+  preload: false,
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "San Francisco Bay Area Appraisal Association | 舊金山灣區鑒寶協會",
-  description: "San Francisco Bay Area Appraisal Association - Professional appraisal and authentication services for antiques, art, and collectibles | 舊金山灣區鑒寶協會 - 專業古董、藝術品和收藏品鑒定服務",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'meta' });
+  return {
+    title: { default: t('title'), template: `%s | ${locale === 'zh' ? '舊金山灣區鑒寶協會' : 'SF Bay Area Appraisal Association'}` },
+    description: t('description'),
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -33,22 +36,16 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-
-  // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
-    notFound();
-  }
-
-  // Providing all messages to the client side
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) notFound();
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang={locale === 'zh' ? 'zh-Hant' : 'en'}>
+      <body className={`${serif.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <SiteHeader />
+          <main>{children}</main>
+          <SiteFooter />
         </NextIntlClientProvider>
       </body>
     </html>

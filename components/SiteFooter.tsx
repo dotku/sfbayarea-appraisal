@@ -1,0 +1,28 @@
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
+
+export default function SiteFooter() {
+  const t = useTranslations();
+
+  return (
+    <footer className="mt-20 border-t border-line bg-ink text-white/80">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3">
+        <div>
+          <p className="font-serif text-lg text-white">{t('brand.name')}</p>
+          <p className="mt-2 text-sm leading-relaxed">{t('footer.about')}</p>
+        </div>
+        <nav className="grid grid-cols-2 gap-2 text-sm">
+          <Link href="/services" className="hover:text-white">{t('nav.services')}</Link>
+          <Link href="/collection" className="hover:text-white">{t('nav.collection')}</Link>
+          <Link href="/pricing" className="hover:text-white">{t('nav.pricing')}</Link>
+          <Link href="/contact" className="hover:text-white">{t('nav.contact')}</Link>
+        </nav>
+        <div className="text-sm">
+          <p>{t('status')}</p>
+          <p className="mt-3 text-white/50">{t('footer.credits')}</p>
+        </div>
+      </div>
+      <div className="border-t border-white/10 py-4 text-center text-xs text-white/50">{t('footer.copyright')}</div>
+    </footer>
+  );
+}
