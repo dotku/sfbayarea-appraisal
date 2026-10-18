@@ -54,7 +54,8 @@
     "referenceTitle": "Reference catalogue",
     "referenceLead": "What appraisers look at, shown on public museum objects.",
     "wantLead": "The eight main categories of the Bay Area market.",
-    "wantMore": "See what we look for in each category"
+    "wantMore": "See what we look for in each category",
+    "wantImages": "Category images are public museum objects shown for illustration, not objects we hold."
   },
   "services": {
     "title": "Services",
@@ -269,6 +270,7 @@
     "prep": "Please prepare",
     "limit": "Limits",
     "never": "In every category we do not accept ivory or rhino horn, archaeological objects without lawful provenance, or counterfeits.",
-    "cta": "How to consign"
+    "cta": "How to consign",
+    "illustration": "Illustration: "
   }
 }
