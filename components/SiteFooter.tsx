@@ -26,6 +26,7 @@ export default function SiteFooter() {
           )}
         </div>
         <nav className="grid grid-cols-2 gap-2 text-sm">
+          <Link href="/departments" className="hover:text-white">{t('nav.departments')}</Link>
           <Link href="/items" className="hover:text-white">{t('nav.items')}</Link>
           <Link href="/collecting" className="hover:text-white">{t('nav.collecting')}</Link>
           <Link href="/services" className="hover:text-white">{t('nav.services')}</Link>

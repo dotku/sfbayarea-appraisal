@@ -4,6 +4,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { getPublicItem } from '@/lib/publicItems';
 import { estimateText } from '@/components/ItemCard';
+import { departmentOf } from '@/lib/departments';
 
 export const revalidate = 1800;
 
@@ -20,6 +21,8 @@ export default async function ItemPage({ params }: { params: Promise<{ no: strin
   if (!item) notFound();
   const t = await getTranslations('items');
   const nav = await getTranslations('nav');
+  const dt = await getTranslations('departments');
+  const dept = departmentOf(item.category);
   const title = (await getLocale()) !== 'zh' && item.titleEn ? item.titleEn : item.title;
   const est = estimateText(item);
 
@@ -54,7 +57,16 @@ export default async function ItemPage({ params }: { params: Promise<{ no: strin
         </div>
 
         <div className="md:sticky md:top-24 md:self-start">
-          <p className="text-sm text-gold">{t(`cat.${item.category}`)} · {t(item.stage)}</p>
+          <p className="text-sm text-gold">
+            {dept ? (
+              <Link href={{ pathname: '/departments/[slug]', params: { slug: dept.slug } }} className="hover:underline">
+                {dt(`d.${dept.slug}.name`)}
+              </Link>
+            ) : (
+              t(`cat.${item.category}`)
+            )}{' '}
+            · {t(item.stage)}
+          </p>
           <h1 className="mt-2 font-serif text-2xl font-bold leading-tight sm:text-3xl">{title}</h1>
           {est && (
             <p className="mt-4 text-lg">

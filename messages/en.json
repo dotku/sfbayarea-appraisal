@@ -19,7 +19,8 @@
     "close": "Close",
     "soon": "Opening soon",
     "items": "Objects",
-    "collecting": "What we collect"
+    "collecting": "What we collect",
+    "departments": "Departments"
   },
   "status": "Peninsula Auctions Gallery is preparing its first sale and accepting consignments now.",
   "home": {
@@ -265,5 +266,70 @@
     "never": "In every category we do not accept ivory or rhino horn, archaeological objects without lawful provenance, or counterfeits.",
     "cta": "How to consign",
     "illustration": "Illustration: "
+  },
+  "departments": {
+    "title": "Departments",
+    "lead": "Our specialist departments. Each page shows the objects we have collected in that field, what we look for, and who to contact to consign.",
+    "objects": "{count, plural, =0 {No objects yet} one {# object} other {# objects}}",
+    "selected": "Selected objects",
+    "selectedLead": "Objects collected for this department. Dates and materials are first assessments.",
+    "noneYet": "We are collecting for this department now. Registered objects will appear here.",
+    "lookFor": "What we look for",
+    "prepare": "Please prepare",
+    "limits": "Limits",
+    "consignTitle": "Consign to this department",
+    "consignText": "Send us photos, dimensions and what you know about the object. We will reply with a first opinion and next steps.",
+    "contact": "Contact",
+    "others": "Other departments",
+    "back": "All departments",
+    "illustration": "Illustration: ",
+    "department": "Department",
+    "d": {
+      "asian-art": {
+        "name": "Asian Art",
+        "short": "Chinese ceramics, jade, bronzes, Buddhist art and scholar's objects.",
+        "intro": "Asian art is the largest collecting field in the Bay Area, and the heart of our sales. We handle Chinese ceramics from early wares to imperial porcelain, jade and hardstone carvings, bronzes, Buddhist sculpture, snuff bottles and the objects of the scholar's desk. Every object is examined in hand, and anything we cannot settle is stated plainly in the catalogue."
+      },
+      "chinese-paintings": {
+        "name": "Chinese Paintings & Calligraphy",
+        "short": "Hanging scrolls, handscrolls, albums and fans.",
+        "intro": "Chinese paintings and calligraphy call for careful study of brushwork, inscriptions, seals, paper and mounting, and of a work's published and collecting history. We catalogue hanging scrolls, handscrolls, album leaves and fans from classical masters to 20th-century painters."
+      },
+      "japanese-korean-art": {
+        "name": "Japanese & Korean Art",
+        "short": "Woodblock prints, ceramics, metalwork and lacquer.",
+        "intro": "From ukiyo-e woodblock prints and Meiji metalwork to lacquer, netsuke and Korean ceramics, Japanese and Korean art has a long collecting tradition on the West Coast. We welcome single pieces and collections."
+      },
+      "furniture": {
+        "name": "Furniture & Works of Art",
+        "short": "Hardwood furniture and wooden scholar's objects.",
+        "intro": "Chinese hardwood furniture in huanghuali, zitan and other timbers is among the most valuable categories we sell. We look closely at timber, joinery, surface and any replaced parts, and we require full documents for regulated timbers."
+      },
+      "paintings": {
+        "name": "Paintings",
+        "short": "Oils, watercolours, prints and drawings.",
+        "intro": "Paintings, watercolours, prints and drawings, with particular strength in California schools: plein-air Impressionism, Bay Area Figurative and contemporary work. Labels, inscriptions and exhibition history on the back of a work matter as much as the front."
+      },
+      "jewelry-watches": {
+        "name": "Jewelry & Watches",
+        "short": "Signed jewelry, gemstones, gold and fine watches.",
+        "intro": "Signed jewelry, coloured gemstones, diamonds, gold and mechanical watches are among the most common finds in Bay Area estates, and they sell quickly. Lab reports, boxes and papers help an object reach its full value."
+      },
+      "trading-cards": {
+        "name": "Trading Cards",
+        "short": "Graded sports cards and trading card games.",
+        "intro": "The Bay Area hosts large card shows almost every month. We accept graded, slabbed sports cards and trading card games, including Pokémon, Magic: The Gathering and One Piece, and we welcome Chinese- and Japanese-language cards."
+      },
+      "20th-century-design": {
+        "name": "20th Century Design",
+        "short": "Mid-century furniture, lighting and ceramics.",
+        "intro": "Mid-century modern furniture, lighting and ceramics, with the Bay Area's own design tradition close at hand. Makers' labels, original finishes and documented provenance carry real weight in this market."
+      },
+      "silver-decorative-arts": {
+        "name": "Silver & Decorative Arts",
+        "short": "European and American silver, furniture, porcelain and glass.",
+        "intro": "European and American silver, furniture, porcelain, glass and textiles. Hallmarks, makers' marks and condition decide value here, and we photograph them closely for every catalogue entry."
+      }
+    }
   }
 }

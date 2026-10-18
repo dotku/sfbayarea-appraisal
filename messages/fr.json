@@ -19,7 +19,8 @@
     "close": "Fermer",
     "soon": "Ouverture prochaine",
     "items": "Objets",
-    "collecting": "Ce que nous recherchons"
+    "collecting": "Ce que nous recherchons",
+    "departments": "Départements"
   },
   "status": "Peninsula Auctions Gallery prépare sa première vente et accepte dès maintenant les objets confiés.",
   "home": {
@@ -265,5 +266,70 @@
     "never": "Dans toutes les catégories, nous n'acceptons ni l'ivoire, ni la corne de rhinocéros, ni les objets archéologiques sans provenance licite, ni les contrefaçons.",
     "cta": "Confier un objet",
     "illustration": "Illustration : "
+  },
+  "departments": {
+    "title": "Départements",
+    "lead": "Nos départements spécialisés. Chaque page présente les objets que nous avons réunis dans ce domaine, ce que nous recherchons et la personne à contacter pour confier un objet.",
+    "objects": "{count, plural, =0 {Aucun objet pour l'instant} one {# objet} other {# objets}}",
+    "selected": "Objets sélectionnés",
+    "selectedLead": "Objets réunis pour ce département. Les datations et les matériaux sont des premières estimations.",
+    "noneYet": "Nous réunissons actuellement des objets pour ce département. Les objets enregistrés apparaîtront ici.",
+    "lookFor": "Ce que nous recherchons",
+    "prepare": "À préparer",
+    "limits": "Restrictions",
+    "consignTitle": "Confier un objet à ce département",
+    "consignText": "Envoyez-nous des photos, les dimensions et ce que vous savez de l'objet. Nous vous répondrons avec un premier avis et les prochaines étapes.",
+    "contact": "Contact",
+    "others": "Autres départements",
+    "back": "Tous les départements",
+    "illustration": "Illustration : ",
+    "department": "Département",
+    "d": {
+      "asian-art": {
+        "name": "Arts d'Asie",
+        "short": "Céramiques chinoises, jade, bronzes, art bouddhique et objets de lettré.",
+        "intro": "Les arts d'Asie constituent le premier domaine de collection de la baie de San Francisco et le cœur de nos ventes. Nous traitons les céramiques chinoises, des productions anciennes à la porcelaine impériale, le jade et les pierres dures sculptées, les bronzes, la sculpture bouddhique, les tabatières et les objets du bureau du lettré. Chaque objet est examiné en main, et tout ce que nous ne pouvons trancher est clairement indiqué au catalogue."
+      },
+      "chinese-paintings": {
+        "name": "Peinture et calligraphie chinoises",
+        "short": "Rouleaux verticaux, rouleaux horizontaux, albums et éventails.",
+        "intro": "La peinture et la calligraphie chinoises exigent une étude attentive du coup de pinceau, des inscriptions, des sceaux, du papier et du montage, ainsi que de la bibliographie et de l'historique de l'œuvre. Nous cataloguons rouleaux verticaux, rouleaux horizontaux, feuilles d'album et éventails, des maîtres classiques aux peintres du XXe siècle."
+      },
+      "japanese-korean-art": {
+        "name": "Art japonais et coréen",
+        "short": "Estampes, céramiques, métal et laques.",
+        "intro": "Des estampes ukiyo-e et des métaux de l'ère Meiji aux laques, netsuke et céramiques coréennes, l'art japonais et coréen bénéficie d'une longue tradition de collection sur la côte Ouest. Nous accueillons aussi bien les pièces isolées que les collections."
+      },
+      "furniture": {
+        "name": "Mobilier et objets d'art",
+        "short": "Mobilier en bois précieux et objets de lettré en bois.",
+        "intro": "Le mobilier chinois en huanghuali, zitan et autres bois précieux compte parmi les catégories de plus forte valeur que nous vendons. Nous examinons de près le bois, les assemblages, la surface et les éventuels éléments remplacés, et nous exigeons des documents complets pour les bois réglementés."
+      },
+      "paintings": {
+        "name": "Peinture",
+        "short": "Huiles, aquarelles, estampes et dessins.",
+        "intro": "Peintures, aquarelles, estampes et dessins, avec un accent particulier sur les écoles californiennes : impressionnisme de plein air, figuration de la baie de San Francisco et art contemporain. Les étiquettes, inscriptions et historiques d'exposition au revers d'une œuvre comptent autant que sa face."
+      },
+      "jewelry-watches": {
+        "name": "Bijoux et montres",
+        "short": "Bijoux signés, pierres précieuses, or et montres de prestige.",
+        "intro": "Bijoux signés, pierres de couleur, diamants, or et montres mécaniques figurent parmi les découvertes les plus fréquentes dans les successions de la baie de San Francisco, et se vendent rapidement. Certificats de laboratoire, écrins et papiers aident un objet à atteindre sa pleine valeur."
+      },
+      "trading-cards": {
+        "name": "Cartes à collectionner",
+        "short": "Cartes de sport gradées et jeux de cartes à collectionner.",
+        "intro": "La baie de San Francisco accueille de grands salons de cartes presque chaque mois. Nous acceptons les cartes de sport gradées sous boîtier et les jeux de cartes à collectionner, dont Pokémon, Magic: The Gathering et One Piece, et nous accueillons volontiers les cartes en chinois et en japonais."
+      },
+      "20th-century-design": {
+        "name": "Design du XXe siècle",
+        "short": "Mobilier, luminaires et céramiques du milieu du siècle.",
+        "intro": "Mobilier, luminaires et céramiques modernes du milieu du XXe siècle, avec la tradition du design propre à la baie de San Francisco toute proche. Étiquettes de fabricant, finitions d'origine et provenance documentée pèsent réellement sur ce marché."
+      },
+      "silver-decorative-arts": {
+        "name": "Argenterie et arts décoratifs",
+        "short": "Argenterie européenne et américaine, mobilier, porcelaine et verre.",
+        "intro": "Argenterie, mobilier, porcelaine, verrerie et textiles européens et américains. Poinçons, marques d'orfèvre et état de conservation déterminent ici la valeur, et nous les photographions en détail pour chaque notice du catalogue."
+      }
+    }
   }
 }

@@ -19,7 +19,8 @@
     "close": "Cerrar",
     "soon": "Próximamente",
     "items": "Objetos",
-    "collecting": "Qué buscamos"
+    "collecting": "Qué buscamos",
+    "departments": "Departamentos"
   },
   "status": "Peninsula Auctions Gallery prepara su primera subasta y ya acepta consignaciones.",
   "home": {
@@ -265,5 +266,70 @@
     "never": "En ninguna categoría aceptamos marfil ni cuerno de rinoceronte, objetos arqueológicos sin procedencia legal, ni falsificaciones.",
     "cta": "Cómo consignar",
     "illustration": "Ilustración: "
+  },
+  "departments": {
+    "title": "Departamentos",
+    "lead": "Nuestros departamentos especializados. Cada página muestra los objetos que hemos reunido en ese ámbito, lo que buscamos y a quién dirigirse para consignar.",
+    "objects": "{count, plural, =0 {Aún no hay objetos} one {# objeto} other {# objetos}}",
+    "selected": "Objetos seleccionados",
+    "selectedLead": "Objetos reunidos para este departamento. Las fechas y los materiales son valoraciones preliminares.",
+    "noneYet": "Estamos reuniendo objetos para este departamento. Los objetos registrados aparecerán aquí.",
+    "lookFor": "Qué buscamos",
+    "prepare": "Prepare, por favor",
+    "limits": "Limitaciones",
+    "consignTitle": "Consignar a este departamento",
+    "consignText": "Envíenos fotos, medidas y lo que sepa sobre el objeto. Le responderemos con una primera opinión y los pasos a seguir.",
+    "contact": "Contacto",
+    "others": "Otros departamentos",
+    "back": "Todos los departamentos",
+    "illustration": "Ilustración: ",
+    "department": "Departamento",
+    "d": {
+      "asian-art": {
+        "name": "Arte asiático",
+        "short": "Cerámica china, jade, bronces, arte budista y objetos de escritorio.",
+        "intro": "El arte asiático es el mayor ámbito de coleccionismo del Área de la Bahía y el núcleo de nuestras subastas. Tratamos cerámica china desde las piezas tempranas hasta la porcelana imperial, jade y tallas en piedras duras, bronces, escultura budista, frascos de rapé y objetos del escritorio del letrado. Cada pieza se examina en mano, y todo lo que no podemos determinar se indica con claridad en el catálogo."
+      },
+      "chinese-paintings": {
+        "name": "Pintura y caligrafía chinas",
+        "short": "Rollos colgantes, rollos horizontales, álbumes y abanicos.",
+        "intro": "La pintura y la caligrafía chinas exigen un estudio minucioso de la pincelada, las inscripciones, los sellos, el papel y el montaje, así como de la bibliografía y el historial de colecciones de la obra. Catalogamos rollos colgantes, rollos horizontales, hojas de álbum y abanicos, desde los maestros clásicos hasta los pintores del siglo XX."
+      },
+      "japanese-korean-art": {
+        "name": "Arte japonés y coreano",
+        "short": "Grabados en madera, cerámica, metalistería y lacas.",
+        "intro": "Desde los grabados ukiyo-e y la metalistería Meiji hasta las lacas, los netsuke y la cerámica coreana, el arte japonés y coreano cuenta con una larga tradición coleccionista en la Costa Oeste. Aceptamos tanto piezas sueltas como colecciones."
+      },
+      "furniture": {
+        "name": "Muebles y objetos de arte",
+        "short": "Muebles de maderas nobles y objetos de escritorio de madera.",
+        "intro": "El mobiliario chino de maderas nobles, en huanghuali, zitan y otras maderas, figura entre las categorías de mayor valor que subastamos. Examinamos con detalle la madera, los ensambles, la superficie y cualquier pieza sustituida, y exigimos documentación completa para las maderas reguladas."
+      },
+      "paintings": {
+        "name": "Pintura",
+        "short": "Óleos, acuarelas, grabados y dibujos.",
+        "intro": "Pinturas, acuarelas, grabados y dibujos, con especial fortaleza en las escuelas californianas: impresionismo plein air, Figuración del Área de la Bahía y obra contemporánea. Las etiquetas, inscripciones e historial de exposiciones del reverso importan tanto como el anverso."
+      },
+      "jewelry-watches": {
+        "name": "Joyería y relojes",
+        "short": "Joyas firmadas, piedras preciosas, oro y relojes de alta gama.",
+        "intro": "Las joyas firmadas, las piedras de color, los diamantes, el oro y los relojes mecánicos son de los hallazgos más frecuentes en las herencias del Área de la Bahía, y se venden con rapidez. Los informes de laboratorio, los estuches y la documentación ayudan a que una pieza alcance todo su valor."
+      },
+      "trading-cards": {
+        "name": "Cartas coleccionables",
+        "short": "Cartas deportivas graduadas y juegos de cartas coleccionables.",
+        "intro": "El Área de la Bahía acoge grandes ferias de cartas casi todos los meses. Aceptamos cartas deportivas graduadas y encapsuladas y juegos de cartas coleccionables, como Pokémon, Magic: The Gathering y One Piece, y también cartas en chino y japonés."
+      },
+      "20th-century-design": {
+        "name": "Diseño del siglo XX",
+        "short": "Mobiliario, iluminación y cerámica de mediados de siglo.",
+        "intro": "Mobiliario, iluminación y cerámica de estilo moderno de mediados de siglo, con la propia tradición de diseño del Área de la Bahía muy presente. Las etiquetas del fabricante, los acabados originales y una procedencia documentada tienen un peso real en este mercado."
+      },
+      "silver-decorative-arts": {
+        "name": "Platería y artes decorativas",
+        "short": "Plata europea y americana, mobiliario, porcelana y vidrio.",
+        "intro": "Plata, mobiliario, porcelana, vidrio y textiles europeos y americanos. Los contrastes, las marcas del platero y el estado de conservación determinan aquí el valor, y los fotografiamos en detalle para cada lote del catálogo."
+      }
+    }
   }
 }
