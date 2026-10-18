@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { listPublicItems } from '@/lib/publicItems';
+import { diverse, listPublicItems } from '@/lib/publicItems';
 import ItemCard from '@/components/ItemCard';
 import { TARGETS, tierClass } from '@/lib/targets';
 
@@ -9,7 +9,7 @@ export const revalidate = 1800;
 
 export default async function HomePage() {
   const t = await getTranslations();
-  const items = await listPublicItems(6);
+  const items = diverse(await listPublicItems(60), 6);
 
   return (
     <>

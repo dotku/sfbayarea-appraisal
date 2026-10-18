@@ -134,6 +134,7 @@ export default function ItemForm({ item, consignors }: { item?: Item; consignors
         </Field>
         <div className="sm:col-span-2">
           <Check name="is_public" defaultChecked={item?.is_public} label="在网站公开展示（只公开品名、门类、年代、材质、尺寸、品相、照片和估价；委托人、底价、备注不公开）" />
+          <p className="mt-1 pl-6 text-xs text-muted">网站目前只有英文和西班牙文版：公开的藏品请填写英文品名，年代、材质、尺寸、款识、品相也请用英文。</p>
         </div>
         <Field label="存放位置">
           <input name="location" defaultValue={item?.location} placeholder="例：仓库 A 架 3 层 / 仍在委托人处" className={input} />

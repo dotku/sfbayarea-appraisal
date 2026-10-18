@@ -12,7 +12,7 @@ export function estimateText(i: Pick<PublicItem, 'estimateLow' | 'estimateHigh'>
 
 export default function ItemCard({ item }: { item: PublicItem }) {
   const t = useTranslations('items');
-  const title = useLocale() === 'en' && item.titleEn ? item.titleEn : item.title;
+  const title = useLocale() !== 'zh' && item.titleEn ? item.titleEn : item.title;
   const est = estimateText(item);
 
   return (

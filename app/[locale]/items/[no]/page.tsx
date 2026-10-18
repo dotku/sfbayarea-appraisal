@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale, no } = await params;
   const item = await getPublicItem(no);
   if (!item) return {};
-  return { title: `${locale === 'en' && item.titleEn ? item.titleEn : item.title} (${item.no})` };
+  return { title: `${locale !== 'zh' && item.titleEn ? item.titleEn : item.title} (${item.no})` };
 }
 
 export default async function ItemPage({ params }: { params: Promise<{ no: string }> }) {
@@ -20,7 +20,7 @@ export default async function ItemPage({ params }: { params: Promise<{ no: strin
   if (!item) notFound();
   const t = await getTranslations('items');
   const nav = await getTranslations('nav');
-  const title = (await getLocale()) === 'en' && item.titleEn ? item.titleEn : item.title;
+  const title = (await getLocale()) !== 'zh' && item.titleEn ? item.titleEn : item.title;
   const est = estimateText(item);
 
   const rows: [string, string][] = (

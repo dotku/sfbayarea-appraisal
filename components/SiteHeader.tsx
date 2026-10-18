@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
-import { Link, usePathname } from '@/i18n/routing';
+import { Link, routing, usePathname } from '@/i18n/routing';
 
 const NAV = [
   { href: '/', key: 'home' },
@@ -37,7 +37,7 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-30 border-b border-line bg-paper/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2.5">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-sm bg-accent font-serif text-lg text-accent-ink">鑒</span>
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-sm bg-accent font-serif text-sm font-semibold tracking-tight text-accent-ink">SF</span>
           <span className="leading-tight">
             <span className="block font-serif text-base font-semibold sm:hidden">{t('brand.short')}</span>
             <span className="hidden font-serif text-lg font-semibold sm:block">{t('brand.name')}</span>
@@ -103,14 +103,23 @@ export default function SiteHeader() {
   );
 }
 
+const LOCALE_LABEL: Record<string, string> = { en: 'EN', es: 'ES', zh: '中文' };
+
 function LocaleSwitch({ locale, pathname }: { locale: string; pathname: ReturnType<typeof usePathname> }) {
-  const other = locale === 'zh' ? 'en' : 'zh';
   // Dynamic routes (/items/[no]) need their params to build the other-language URL.
   const params = useParams();
   const href = { pathname, params } as unknown as Parameters<typeof Link>[0]['href'];
   return (
-    <Link href={href} locale={other} className="px-2 py-2 text-sm text-muted hover:text-ink">
-      {other === 'zh' ? '中文' : 'EN'}
-    </Link>
+    <span className="flex items-center text-sm">
+      {routing.locales.map((l) =>
+        l === locale ? (
+          <span key={l} className="px-1.5 py-2 font-semibold text-ink">{LOCALE_LABEL[l]}</span>
+        ) : (
+          <Link key={l} href={href} locale={l} className="px-1.5 py-2 text-muted hover:text-ink">
+            {LOCALE_LABEL[l]}
+          </Link>
+        ),
+      )}
+    </span>
   );
 }

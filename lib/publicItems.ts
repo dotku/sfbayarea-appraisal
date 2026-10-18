@@ -62,3 +62,17 @@ export async function getPublicItem(no: string): Promise<PublicItem | null> {
   if (!data) return null;
   return (await shape([data as unknown as Item], true))[0] ?? null;
 }
+
+// Registry categories grouped like the target categories (lib/targets.ts); the
+// Chinese & Asian art group covers every category not listed here.
+const GROUP: Partial<Record<Category, string>> = {
+  furniture: 'furniture', cards: 'cards', jewelry: 'jewelry', california_art: 'painting', design: 'design', western: 'western',
+};
+const GROUP_ORDER = ['asian', 'furniture', 'cards', 'jewelry', 'painting', 'design', 'western'];
+
+/** One (newest) object per target group in priority order, then the rest newest first, so the home page shows a mix. */
+export function diverse(items: PublicItem[], n: number): PublicItem[] {
+  const first = GROUP_ORDER.map((g) => items.find((i) => (GROUP[i.category] ?? 'asian') === g)).filter((i): i is PublicItem => !!i);
+  const rest = items.filter((i) => !first.includes(i));
+  return [...first, ...rest].slice(0, n);
+}
