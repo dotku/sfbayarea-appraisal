@@ -18,7 +18,8 @@
     "language": "Language",
     "close": "Close",
     "soon": "Opening soon",
-    "items": "Objects"
+    "items": "Objects",
+    "collecting": "What we collect"
   },
   "status": "The association is being formed: we are recruiting our first appraisers and partner institutions, and bookings open soon.",
   "home": {
@@ -51,7 +52,9 @@
     "wantTitle": "What we collect",
     "wantNote": "We do not accept ivory or rhino horn. Archaeological objects need documented lawful provenance and export.",
     "referenceTitle": "Reference catalogue",
-    "referenceLead": "What appraisers look at, shown on public museum objects."
+    "referenceLead": "What appraisers look at, shown on public museum objects.",
+    "wantLead": "The eight main categories of the Bay Area market.",
+    "wantMore": "See what we look for in each category"
   },
   "services": {
     "title": "Services",
@@ -178,10 +181,94 @@
       "jade": "Jade",
       "painting": "Painting",
       "bronze": "Bronze",
-      "furniture": "Furniture",
+      "furniture": "Hardwood furniture",
       "metalwork": "Metalwork",
       "scholar": "Scholar's objects",
-      "other": "Other"
-    }
+      "other": "Other",
+      "buddhist": "Buddhist art",
+      "japan_korea": "Japanese & Korean art",
+      "cards": "Trading cards",
+      "jewelry": "Jewelry & watches",
+      "california_art": "California painting",
+      "wine": "Wine",
+      "design": "Mid-century design",
+      "western": "European & American decorative arts"
+    },
+    "grade": "Grade"
+  },
+  "collecting": {
+    "g": {
+      "asian": {
+        "name": "Chinese and Asian art",
+        "tier": "First priority",
+        "why": "The largest collecting category in the Bay Area.",
+        "what": "Ceramics (imperial, private-kiln and Song wares), jade and hardstone, painting and calligraphy, bronzes and Buddhist sculpture, scholar's objects and snuff bottles, Japanese and Korean art",
+        "prep": "Clear photos (including the base and any marks), dimensions, purchase or family records",
+        "limit": "Archaeological objects need documented lawful provenance and export"
+      },
+      "furniture": {
+        "name": "Hardwood furniture",
+        "tier": "First priority",
+        "why": "Among the highest-value categories.",
+        "what": "Huanghuali, zitan and other hardwood furniture, plus brush pots, boxes and other wooden scholar's objects",
+        "prep": "Overall and joinery photos, dimensions, any replaced or repaired parts",
+        "limit": "Regulated timbers need full provenance documents"
+      },
+      "cards": {
+        "name": "Trading cards",
+        "tier": "Also collecting",
+        "why": "Large card shows run in the Bay Area almost every month.",
+        "what": "Graded, slabbed sports cards, Pokémon, Magic: The Gathering, One Piece and more; Chinese- and Japanese-language cards welcome",
+        "prep": "Grading company, grade and certificate number; front and back photos of the slab",
+        "limit": "No ungraded cards or sealed packs for now"
+      },
+      "jewelry": {
+        "name": "Jewelry and watches",
+        "tier": "Also collecting",
+        "why": "The most common category in estate clear-outs, and quick to sell.",
+        "what": "Signed jewelry, coloured gemstones, diamonds, gold, mechanical watches",
+        "prep": "Lab certificates, original receipts, boxes and papers",
+        "limit": "No counterfeit brands"
+      },
+      "california": {
+        "name": "California painting",
+        "tier": "Also collecting",
+        "why": "A regional category with strong local demand.",
+        "what": "California Impressionism (plein air), Bay Area Figurative and contemporary works",
+        "prep": "Front and back photos (including labels and inscriptions), dimensions, exhibition or publication history",
+        "limit": "—"
+      },
+      "wine": {
+        "name": "Wine",
+        "tier": "Registering interest",
+        "why": "Next to Napa and Sonoma, fine wine collecting is active.",
+        "what": "Fine wine, cellar collections and large formats",
+        "prep": "Label and fill-level photos, storage history",
+        "limit": "Wine auctions need a California liquor licence; until we hold one we only register interest and do not offer wine for sale"
+      },
+      "design": {
+        "name": "Mid-century modern design",
+        "tier": "Also collecting",
+        "why": "The Bay Area has a strong design tradition.",
+        "what": "Mid-20th-century furniture, lighting and ceramics",
+        "prep": "Photos of makers' marks and signatures",
+        "limit": "—"
+      },
+      "western": {
+        "name": "European and American furniture and decorative arts",
+        "tier": "Also collecting",
+        "why": "High volume across many types.",
+        "what": "Furniture, silver, porcelain, glass and textiles",
+        "prep": "Overall and mark photos, dimensions",
+        "limit": "—"
+      }
+    },
+    "title": "What we collect",
+    "lead": "We collect in the eight main categories of the Bay Area market. Chinese and Asian art and hardwood furniture come first; the other categories are registered alongside.",
+    "what": "We look for",
+    "prep": "Please prepare",
+    "limit": "Limits",
+    "never": "In every category we do not accept ivory or rhino horn, archaeological objects without lawful provenance, or counterfeits.",
+    "cta": "How to consign"
   }
 }

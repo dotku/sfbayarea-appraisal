@@ -29,6 +29,7 @@ export default async function ItemPage({ params }: { params: Promise<{ no: strin
       [t('era'), item.era],
       [t('material'), item.material],
       [t('size'), item.dimensions],
+      [t('grade'), item.grade],
       [t('marks'), item.marks],
       [t('condition'), item.condition],
     ] as [string, string][]

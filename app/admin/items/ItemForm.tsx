@@ -9,6 +9,7 @@ const input = 'mt-1 w-full rounded-sm border border-line bg-white px-3 py-2';
 export default function ItemForm({ item, consignors }: { item?: Item; consignors: Pick<Consignor, 'id' | 'name' | 'city'>[] }) {
   const [state, action, pending] = useActionState(saveItem, null);
   const [consignor, setConsignor] = useState(item?.consignor_id ?? '');
+  const [category, setCategory] = useState<string>(item?.category ?? 'ceramics');
 
   return (
     <form action={action} className="space-y-8">
@@ -22,7 +23,7 @@ export default function ItemForm({ item, consignors }: { item?: Item; consignors
           <input name="title_en" maxLength={160} defaultValue={item?.title_en} placeholder="e.g. Blue-and-white dish with lotus scroll" className={input} />
         </Field>
         <Field label="门类">
-          <select name="category" defaultValue={item?.category ?? 'ceramics'} className={input}>
+          <select name="category" value={category} onChange={(e) => setCategory(e.target.value)} className={input}>
             {Object.entries(CATEGORY_LABEL).map(([k, v]) => (
               <option key={k} value={k}>{v}</option>
             ))}
@@ -40,6 +41,19 @@ export default function ItemForm({ item, consignors }: { item?: Item; consignors
         <Field label="重量">
           <input name="weight" defaultValue={item?.weight} placeholder="g" className={input} />
         </Field>
+        {category === 'cards' && (
+          <>
+            <Field label="评级公司">
+              <input name="grade_company" defaultValue={item?.grade_company} placeholder="PSA / BGS / CGC" className={input} />
+            </Field>
+            <Field label="评级分数">
+              <input name="grade" defaultValue={item?.grade} placeholder="例：10" className={input} />
+            </Field>
+            <Field label="证书编号" wide>
+              <input name="cert_no" defaultValue={item?.cert_no} className={input} />
+            </Field>
+          </>
+        )}
         <Field label="款识 / 印章" wide>
           <input name="marks" defaultValue={item?.marks} className={input} />
         </Field>

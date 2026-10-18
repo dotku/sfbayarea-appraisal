@@ -8,9 +8,9 @@ import { Link, usePathname } from '@/i18n/routing';
 const NAV = [
   { href: '/', key: 'home' },
   { href: '/items', key: 'items' },
+  { href: '/collecting', key: 'collecting' },
   { href: '/services', key: 'services' },
   { href: '/collection', key: 'collection' },
-  { href: '/pricing', key: 'pricing' },
 ] as const;
 
 export default function SiteHeader() {

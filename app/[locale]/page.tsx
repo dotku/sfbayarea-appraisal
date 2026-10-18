@@ -2,10 +2,9 @@ import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { listPublicItems } from '@/lib/publicItems';
 import ItemCard from '@/components/ItemCard';
+import { TARGETS, tierClass } from '@/lib/targets';
 
 export const revalidate = 1800;
-
-const WANT = ['ceramics', 'jade', 'painting', 'bronze', 'furniture', 'consulting'] as const;
 
 export default async function HomePage() {
   const t = await getTranslations();
@@ -56,15 +55,27 @@ export default async function HomePage() {
       <section className="border-y border-line bg-card">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
           <h2 className="font-serif text-2xl font-semibold sm:text-3xl">{t('home.wantTitle')}</h2>
-          <div className="mt-8 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
-            {WANT.map((k) => (
-              <div key={k} className="bg-card p-6">
-                <h3 className="font-serif text-lg font-semibold">{t(`services.${k}`)}</h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-ink/85">{t(`services.${k}Text`)}</p>
-              </div>
+          <p className="mt-2 text-ink/75">{t('home.wantLead')}</p>
+          <ol className="mt-8 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+            {TARGETS.map(({ key, tier }, n) => (
+              <li key={key}>
+                <Link href={{ pathname: '/collecting', hash: key }} className="flex h-full flex-col bg-card p-5 hover:bg-paper">
+                  <span className="flex items-start justify-between gap-2">
+                    <span className="font-serif text-lg font-semibold leading-snug">
+                      <span className="mr-1.5 text-accent/70">{n + 1}</span>
+                      {t(`collecting.g.${key}.name`)}
+                    </span>
+                    <span className={`shrink-0 rounded-sm px-1.5 py-0.5 text-[11px] ${tierClass(tier)}`}>{t(`collecting.g.${key}.tier`)}</span>
+                  </span>
+                  <span className="mt-2 text-sm leading-relaxed text-ink/75">{t(`collecting.g.${key}.why`)}</span>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ol>
           <p className="mt-4 text-sm text-ink/75">{t('home.wantNote')}</p>
+          <Link href="/collecting" className="mt-4 inline-block text-sm text-accent hover:underline">
+            {t('home.wantMore')} →
+          </Link>
         </div>
       </section>
 

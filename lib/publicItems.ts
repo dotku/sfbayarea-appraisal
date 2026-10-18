@@ -14,6 +14,7 @@ export interface PublicItem {
   material: string;
   dimensions: string;
   marks: string;
+  grade: string;
   condition: string;
   estimateLow: number | null;
   estimateHigh: number | null;
@@ -22,7 +23,7 @@ export interface PublicItem {
 }
 
 const COLUMNS =
-  'item_no, title, title_en, category, era, material, dimensions, marks, condition, estimate_low, estimate_high, status, images, is_public, has_ivory_rhino, is_archaeological, has_regulated_wood, provenance_documented';
+  'item_no, title, title_en, category, era, material, dimensions, marks, grade_company, grade, cert_no, condition, estimate_low, estimate_high, status, images, is_public, has_ivory_rhino, is_archaeological, has_regulated_wood, provenance_documented';
 
 const stage = (s: Status): PublicItem['stage'] => (s === 'listed' ? 'upcoming' : s === 'sold' ? 'sold' : 'collected');
 
@@ -40,6 +41,7 @@ async function shape(rows: Item[], allImages: boolean): Promise<PublicItem[]> {
     material: r.material,
     dimensions: r.dimensions,
     marks: r.marks,
+    grade: [r.grade_company, r.grade].filter(Boolean).join(' ') + (r.cert_no ? ` · #${r.cert_no}` : ''),
     condition: r.condition,
     estimateLow: r.estimate_low,
     estimateHigh: r.estimate_high,

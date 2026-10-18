@@ -5,9 +5,17 @@ export const CATEGORY_LABEL = {
   jade: '玉器',
   painting: '书画',
   bronze: '青铜',
-  furniture: '家具木器',
-  metalwork: '金属工艺',
+  buddhist: '佛教艺术',
   scholar: '文房杂项',
+  metalwork: '金属工艺',
+  japan_korea: '日韩艺术',
+  furniture: '硬木家具',
+  cards: '卡牌',
+  jewelry: '珠宝名表',
+  california_art: '加州绘画',
+  wine: '葡萄酒',
+  design: '中世纪现代设计',
+  western: '欧美家具与装饰',
   other: '其他',
 } as const;
 
@@ -61,6 +69,9 @@ export interface Item {
   marks: string;
   condition: string;
   provenance: string;
+  grade_company: string;
+  grade: string;
+  cert_no: string;
   source_channel: Source;
   consignor_id: string | null;
   acquired_on: string | null;
