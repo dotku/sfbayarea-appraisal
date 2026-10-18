@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
   return {
-    title: { default: t('title'), template: `%s | ${locale === 'zh' ? '半島拍賣行' : 'Peninsula Auctions'}` },
+    title: { default: t('title'), template: `%s | ${locale === 'zh' ? '半島拍賣行 Peninsula Auctions Gallery' : 'Peninsula Auctions Gallery'}` },
     description: t('description'),
   };
 }
@@ -48,6 +49,7 @@ export default async function LocaleLayout({
           <main>{children}</main>
           <SiteFooter />
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );

@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Peninsula Auctions | Antiques, Art & Collectibles in the SF Bay Area",
-    "description": "Peninsula Auctions is a San Francisco Bay Area auction house in preparation, collecting antiques, art and collectibles of every kind: Asian art, hardwood furniture, painting, jewelry and watches, trading cards, mid-century design and European and American decorative arts."
+    "title": "Peninsula Auctions Gallery | Antiques, Art & Collectibles in the SF Bay Area",
+    "description": "Peninsula Auctions Gallery is a San Francisco Bay Area auction house in preparation, collecting antiques, art and collectibles of every kind: Asian art, hardwood furniture, painting, jewelry and watches, trading cards, mid-century design and European and American decorative arts."
   },
   "brand": {
-    "name": "Peninsula Auctions",
-    "short": "Peninsula Auctions",
+    "name": "Peninsula Auctions Gallery",
+    "short": "Peninsula Auctions Gallery",
     "en": "San Francisco Bay Area"
   },
   "nav": {
@@ -21,7 +21,7 @@
     "items": "Objects",
     "collecting": "What we collect"
   },
-  "status": "Peninsula Auctions is preparing its first sale. We are collecting consignments now; registration opens soon.",
+  "status": "Peninsula Auctions Gallery is preparing its first sale and accepting consignments now.",
   "home": {
     "eyebrow": "San Francisco Bay Area · Antiques, art and collectibles",
     "title": "Antiques, art and collectibles, collected in the Bay Area",
@@ -45,7 +45,7 @@
     "pricingTitle": "Clear fees",
     "pricingLead": "A written quote by number of items, category and purpose before any work; never a percentage of value, and the conclusion does not change the fee.",
     "pricingCta": "See fees",
-    "ctaNote": "Consignment registration opens soon. See what to prepare.",
+    "ctaNote": "Email or call us to consign. See what to prepare.",
     "itemsTitle": "Recently collected",
     "itemsLead": "Registered objects that have passed our first review.",
     "itemsEmpty": "Our first objects are being registered and will appear here soon.",
@@ -138,8 +138,8 @@
     "estimated": "Estimated fees"
   },
   "contact": {
-    "title": "Booking: opening soon",
-    "lead": "Bookings open soon. Meanwhile, use the checklist below to get ready; it lets us give a first opinion faster.",
+    "title": "Consign an object",
+    "lead": "Email or call us with photos and what you know about the object; the checklist below helps us give a first opinion faster.",
     "comingSoon": "Contact details coming soon",
     "comingSoonText": "We are preparing to open. Our phone, email and consignment form will be listed here once they are ready.",
     "email": "Email",
@@ -151,12 +151,14 @@
     "prepare3": "History: receipts, auction catalogues, old photos, family records",
     "prepare4": "Purpose: insurance, estate, donation, division or sale",
     "area": "Service area",
-    "areaValue": "San Francisco, Peninsula, East Bay, South Bay"
+    "areaValue": "San Francisco, Peninsula, East Bay, South Bay",
+    "address": "Address",
+    "contactPerson": "Contact"
   },
   "footer": {
     "about": "A San Francisco Bay Area auction house for antiques, art and collectibles.",
     "credits": "Images: The Metropolitan Museum of Art Open Access (CC0)",
-    "copyright": "© 2026 Peninsula Auctions"
+    "copyright": "© 2026 Peninsula Auctions Gallery"
   },
   "items": {
     "title": "Objects",

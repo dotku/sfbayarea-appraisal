@@ -2,9 +2,8 @@ import { defineRouting } from 'next-intl/routing';
 import { createNavigation } from 'next-intl/navigation';
 
 export const routing = defineRouting({
-  // English and Spanish for now; messages/zh.json is kept so Chinese can be switched
-  // back on by adding 'zh' here (and removing the /zh redirect in next.config.ts).
-  locales: ['en', 'es'],
+  // One messages/<locale>.json per locale; zh is Traditional Chinese.
+  locales: ['en', 'es', 'zh', 'fr', 'ru'],
   defaultLocale: 'en',
   pathnames: {
     '/': '/',

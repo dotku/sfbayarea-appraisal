@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import { CONTACT, MAP_URL } from '@/lib/site';
 
 export default function SiteFooter() {
   const t = useTranslations();
@@ -10,6 +11,19 @@ export default function SiteFooter() {
         <div>
           <p className="font-serif text-lg text-white">{t('brand.name')}</p>
           <p className="mt-2 text-sm leading-relaxed">{t('footer.about')}</p>
+          <address className="mt-3 text-sm not-italic">
+            <a href={MAP_URL} target="_blank" rel="noreferrer" className="hover:text-white">
+              {CONTACT.address.map((l) => <span key={l} className="block">{l}</span>)}
+            </a>
+          </address>
+          {CONTACT.phone && (
+            <a href={`tel:${CONTACT.phone.replace(/[^\d+]/g, '')}`} className="mt-2 block text-sm hover:text-white">
+              {CONTACT.name ? `${CONTACT.name} · ` : ''}{CONTACT.phone}
+            </a>
+          )}
+          {CONTACT.email && (
+            <a href={`mailto:${CONTACT.email}`} className="mt-2 block text-sm hover:text-white">{CONTACT.email}</a>
+          )}
         </div>
         <nav className="grid grid-cols-2 gap-2 text-sm">
           <Link href="/items" className="hover:text-white">{t('nav.items')}</Link>

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import { CONTACT, hasContact } from '@/lib/site';
+import { CONTACT, MAP_URL, hasContact } from '@/lib/site';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -21,6 +21,12 @@ export default function ContactPage() {
         <section className="rounded-sm border border-line bg-card p-6">
           {hasContact ? (
             <dl className="space-y-3 text-sm">
+              {CONTACT.name && (
+                <div>
+                  <dt className="text-muted">{t('contactPerson')}</dt>
+                  <dd className="font-semibold">{CONTACT.name}</dd>
+                </div>
+              )}
               {CONTACT.email && (
                 <div>
                   <dt className="text-muted">{t('email')}</dt>
@@ -51,6 +57,14 @@ export default function ContactPage() {
             </>
           )}
           <div className="mt-6 border-t border-line pt-4 text-sm">
+            <p className="text-muted">{t('address')}</p>
+            <address className="mt-1 not-italic">
+              <a href={MAP_URL} target="_blank" rel="noreferrer" className="hover:text-accent hover:underline">
+                {CONTACT.address.map((l) => <span key={l} className="block">{l}</span>)}
+              </a>
+            </address>
+          </div>
+          <div className="mt-4 border-t border-line pt-4 text-sm">
             <p className="text-muted">{t('area')}</p>
             <p className="mt-1">{t('areaValue')}</p>
           </div>

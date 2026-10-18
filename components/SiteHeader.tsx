@@ -35,17 +35,17 @@ export default function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-30 border-b border-line bg-paper/95 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-8 px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2.5">
           <span className="grid h-9 w-9 shrink-0 place-items-center rounded-sm bg-accent font-serif text-sm font-semibold tracking-tight text-accent-ink">PA</span>
           <span className="leading-tight">
             <span className="block font-serif text-base font-semibold sm:hidden">{t('brand.short')}</span>
-            <span className="hidden font-serif text-lg font-semibold sm:block">{t('brand.name')}</span>
-            <span className="hidden text-xs text-muted sm:block">{t('brand.en')}</span>
+            <span className="hidden whitespace-nowrap font-serif text-lg font-semibold sm:block">{t('brand.name')}</span>
+            <span className="hidden whitespace-nowrap text-xs text-muted sm:block">{t('brand.en')}</span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm md:flex">
+        <nav className="hidden items-center gap-5 whitespace-nowrap text-sm xl:flex">
           {NAV.map((n) => (
             <Link key={n.href} href={n.href} aria-current={isActive(n.href) ? 'page' : undefined} className={linkClass(n.href)}>
               {t(`nav.${n.key}`)}
@@ -63,7 +63,7 @@ export default function SiteHeader() {
           <LocaleSwitch locale={locale} pathname={pathname} />
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 xl:hidden">
           <LocaleSwitch locale={locale} pathname={pathname} />
           <button
             type="button"
@@ -78,7 +78,7 @@ export default function SiteHeader() {
       </div>
 
       {open && (
-        <nav id="mobile-nav" className="border-t border-line bg-paper px-4 pb-4 md:hidden">
+        <nav id="mobile-nav" className="border-t border-line bg-paper px-4 pb-4 xl:hidden">
           {NAV.map((n) => (
             <Link
               key={n.href}
@@ -103,14 +103,14 @@ export default function SiteHeader() {
   );
 }
 
-const LOCALE_LABEL: Record<string, string> = { en: 'EN', es: 'ES', zh: '中文' };
+const LOCALE_LABEL: Record<string, string> = { en: 'EN', es: 'ES', zh: '中文', fr: 'FR', ru: 'RU' };
 
 function LocaleSwitch({ locale, pathname }: { locale: string; pathname: ReturnType<typeof usePathname> }) {
   // Dynamic routes (/items/[no]) need their params to build the other-language URL.
   const params = useParams();
   const href = { pathname, params } as unknown as Parameters<typeof Link>[0]['href'];
   return (
-    <span className="flex items-center text-sm">
+    <span className="flex items-center whitespace-nowrap text-sm">
       {routing.locales.map((l) =>
         l === locale ? (
           <span key={l} className="px-1.5 py-2 font-semibold text-ink">{LOCALE_LABEL[l]}</span>

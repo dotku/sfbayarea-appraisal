@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Peninsula Auctions | Antigüedades, arte y coleccionables en el Área de la Bahía",
-    "description": "Peninsula Auctions es una casa de subastas del Área de la Bahía de San Francisco en preparación, que reúne antigüedades, arte y coleccionables de todo tipo: arte asiático, muebles de maderas nobles, pintura, joyería y relojes, cartas coleccionables, diseño de mediados de siglo y artes decorativas europeas y americanas."
+    "title": "Peninsula Auctions Gallery | Antigüedades, arte y coleccionables en el Área de la Bahía",
+    "description": "Peninsula Auctions Gallery es una casa de subastas del Área de la Bahía de San Francisco en preparación, que reúne antigüedades, arte y coleccionables de todo tipo: arte asiático, muebles de maderas nobles, pintura, joyería y relojes, cartas coleccionables, diseño de mediados de siglo y artes decorativas europeas y americanas."
   },
   "brand": {
-    "name": "Peninsula Auctions",
-    "short": "Peninsula Auctions",
+    "name": "Peninsula Auctions Gallery",
+    "short": "Peninsula Auctions Gallery",
     "en": "Área de la Bahía de San Francisco"
   },
   "nav": {
@@ -21,7 +21,7 @@
     "items": "Objetos",
     "collecting": "Qué buscamos"
   },
-  "status": "Peninsula Auctions prepara su primera subasta. Ya estamos reuniendo consignaciones; el registro se abrirá pronto.",
+  "status": "Peninsula Auctions Gallery prepara su primera subasta y ya acepta consignaciones.",
   "home": {
     "eyebrow": "Área de la Bahía de San Francisco · Antigüedades, arte y coleccionables",
     "title": "Antigüedades, arte y coleccionables, reunidos en el Área de la Bahía",
@@ -45,7 +45,7 @@
     "pricingTitle": "Tarifas claras",
     "pricingLead": "Presupuesto por escrito según número de piezas, categoría y finalidad antes de empezar; nunca un porcentaje del valor, y la conclusión no cambia la tarifa.",
     "pricingCta": "Ver tarifas",
-    "ctaNote": "El registro de consignaciones se abrirá pronto. Vea qué preparar.",
+    "ctaNote": "Escríbanos o llámenos para consignar. Vea qué preparar.",
     "itemsTitle": "Recién reunidos",
     "itemsLead": "Objetos registrados que han pasado nuestra primera revisión.",
     "itemsEmpty": "Estamos registrando nuestros primeros objetos; aparecerán aquí pronto.",
@@ -138,8 +138,8 @@
     "estimated": "Tarifas estimadas"
   },
   "contact": {
-    "title": "Citas: próximamente",
-    "lead": "Las citas se abrirán pronto. Mientras tanto, use la lista de abajo para prepararse; así podremos darle una primera opinión más rápido.",
+    "title": "Consignar un objeto",
+    "lead": "Escríbanos o llámenos con fotos y lo que sepa del objeto; la lista de abajo nos ayuda a darle una primera opinión más rápido.",
     "comingSoon": "Datos de contacto próximamente",
     "comingSoonText": "Estamos preparando la apertura. Nuestro teléfono, correo y formulario de consignación aparecerán aquí cuando estén listos.",
     "email": "Correo",
@@ -151,12 +151,14 @@
     "prepare3": "Historia: facturas, catálogos de subasta, fotos antiguas, registros familiares",
     "prepare4": "Finalidad: seguro, herencia, donación, división o venta",
     "area": "Zona de servicio",
-    "areaValue": "San Francisco, la Península, East Bay y South Bay"
+    "areaValue": "San Francisco, la Península, East Bay y South Bay",
+    "address": "Dirección",
+    "contactPerson": "Contacto"
   },
   "footer": {
     "about": "Una casa de subastas del Área de la Bahía de San Francisco para antigüedades, arte y coleccionables.",
     "credits": "Imágenes: The Metropolitan Museum of Art, acceso abierto (CC0)",
-    "copyright": "© 2026 Peninsula Auctions"
+    "copyright": "© 2026 Peninsula Auctions Gallery"
   },
   "items": {
     "title": "Objetos",
