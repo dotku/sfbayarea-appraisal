@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "SF Bay Area Appraisal Association | Chinese Antiques & Art Appraisal",
-    "description": "SF Bay Area Appraisal Association (in formation): appraisal and valuation advice for Chinese ceramics, jade, painting and calligraphy, bronzes, furniture and metalwork, with written reports for insurance, estates, donations and sales."
+    "title": "SF Bay Area Appraisal Association | Antiques, Art & Collectibles",
+    "description": "SF Bay Area Appraisal Association (in formation): collecting antiques, art and collectibles of every kind in the Bay Area, including Asian art, hardwood furniture, painting, jewelry and watches, trading cards, mid-century design and European and American decorative arts, with appraisal and valuation advice."
   },
   "brand": {
     "name": "SF Bay Area Appraisal Association",
@@ -23,9 +23,9 @@
   },
   "status": "The association is being formed: we are recruiting our first appraisers and partner institutions, and bookings open soon.",
   "home": {
-    "eyebrow": "San Francisco Bay Area · Chinese antiques and art",
-    "title": "Chinese antiques and art, collected in the Bay Area",
-    "lead": "We collect ceramics, jade, painting and calligraphy, bronzes, furniture and scholar's objects from Bay Area collectors. Each object is registered, photographed and given a first appraisal, then shown here and offered at auction.",
+    "eyebrow": "San Francisco Bay Area · Antiques, art and collectibles",
+    "title": "Antiques, art and collectibles, collected in the Bay Area",
+    "lead": "We collect from Bay Area collectors across every region and category: Asian art, hardwood furniture, painting, jewelry and watches, trading cards, mid-century design, European and American decorative arts and more. Each object is registered, photographed and given a first appraisal, then shown here and offered at auction.",
     "ctaPrimary": "Browse objects",
     "ctaSecondary": "Consign an object",
     "heroCaption": "Jar with dragon, Ming dynasty, Xuande period. The Metropolitan Museum of Art (CC0), for illustration only",
@@ -256,7 +256,7 @@
       }
     },
     "title": "What we collect",
-    "lead": "We collect in the seven main categories of the Bay Area market. Chinese and Asian art and hardwood furniture come first; the other categories are registered alongside.",
+    "lead": "We collect objects of every kind, from any region. These are the seven main categories of the Bay Area market; anything outside them is welcome too.",
     "what": "We look for",
     "prep": "Please prepare",
     "limit": "Limits",
