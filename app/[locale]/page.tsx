@@ -1,107 +1,97 @@
-import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { COLLECTION } from '@/lib/collection';
-import CollectionGrid from '@/components/CollectionGrid';
+import { listPublicItems } from '@/lib/publicItems';
+import ItemCard from '@/components/ItemCard';
 
-const FEATURED = ['longquan-bottle', 'qing-jade-box', 'ni-zan-mount-yu', 'huanghuali-armchair', 'ritual-altar-set', 'cloisonne-table-screen'];
-const CATEGORY_KEYS = ['ceramics', 'jade', 'painting', 'bronze', 'furniture', 'consulting'] as const;
+export const revalidate = 1800;
 
-export default function HomePage() {
-  const t = useTranslations();
-  const featured = FEATURED.map((id) => COLLECTION.find((c) => c.id === id)!);
+const WANT = ['ceramics', 'jade', 'painting', 'bronze', 'furniture', 'consulting'] as const;
+
+export default async function HomePage() {
+  const t = await getTranslations();
+  const items = await listPublicItems(6);
 
   return (
     <>
       <p className="border-b border-line bg-card px-4 py-2 text-center text-xs text-muted sm:text-sm">{t('status')}</p>
 
-      <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.15fr_1fr] md:py-20">
-        <div>
-          <p className="text-sm tracking-wide text-gold">{t('home.eyebrow')}</p>
-          <h1 className="mt-3 font-serif text-3xl font-bold leading-tight sm:text-5xl">{t('home.title')}</h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-ink/80 sm:text-lg">{t('home.lead')}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/contact" className="rounded-sm bg-accent px-6 py-3 text-accent-ink hover:opacity-90">
-              {t('home.ctaPrimary')}
-            </Link>
-            <Link href="/collection" className="rounded-sm border border-ink/30 px-6 py-3 hover:border-ink">
-              {t('home.ctaSecondary')}
-            </Link>
-          </div>
-          <p className="mt-3 text-sm text-muted">{t('home.ctaNote')}</p>
+      <section className="mx-auto max-w-6xl px-4 pb-10 pt-14 sm:px-6 md:pt-20">
+        <p className="text-sm tracking-wide text-gold">{t('home.eyebrow')}</p>
+        <h1 className="mt-3 max-w-3xl font-serif text-3xl font-bold leading-tight sm:text-5xl">{t('home.title')}</h1>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink/80 sm:text-lg">{t('home.lead')}</p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link href="/items" className="rounded-sm bg-accent px-6 py-3 text-accent-ink hover:opacity-90">
+            {t('home.ctaPrimary')}
+          </Link>
+          <Link href="/contact" className="rounded-sm border border-ink/30 px-6 py-3 hover:border-ink">
+            {t('home.ctaSecondary')}
+          </Link>
         </div>
-        <figure>
-          <div className="relative mx-auto aspect-3/4 w-full max-w-sm overflow-hidden rounded-sm bg-[#e9e5df]">
-            <Image
-              src="/collection/hero-39666.jpg"
-              alt={t('home.heroCaption')}
-              fill
-              priority
-              sizes="(min-width: 768px) 384px, 90vw"
-              className="object-cover"
-            />
+        <p className="mt-3 text-sm text-muted">{t('home.ctaNote')}</p>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-14 sm:px-6">
+        <div className="flex flex-wrap items-end justify-between gap-4 border-t border-line pt-10">
+          <div>
+            <h2 className="font-serif text-2xl font-semibold sm:text-3xl">{t('home.itemsTitle')}</h2>
+            <p className="mt-2 text-ink/75">{t('home.itemsLead')}</p>
           </div>
-          <figcaption className="mx-auto mt-2 max-w-sm text-sm text-ink/70">{t('home.heroCaption')}</figcaption>
-        </figure>
+          {items.length > 0 && (
+            <Link href="/items" className="text-sm text-accent hover:underline">
+              {t('home.viewAll')} →
+            </Link>
+          )}
+        </div>
+        {items.length === 0 ? (
+          <p className="mt-8 rounded-sm border border-line bg-card p-8 text-center text-ink/75">{t('home.itemsEmpty')}</p>
+        ) : (
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {items.map((i) => (
+              <ItemCard key={i.no} item={i} />
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="border-y border-line bg-card">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <h2 className="font-serif text-2xl font-semibold sm:text-3xl">{t('home.servicesTitle')}</h2>
+          <h2 className="font-serif text-2xl font-semibold sm:text-3xl">{t('home.wantTitle')}</h2>
           <div className="mt-8 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
-            {CATEGORY_KEYS.map((k) => (
+            {WANT.map((k) => (
               <div key={k} className="bg-card p-6">
                 <h3 className="font-serif text-lg font-semibold">{t(`services.${k}`)}</h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-ink/85">{t(`services.${k}Text`)}</p>
               </div>
             ))}
           </div>
-          <Link href="/services" className="mt-6 inline-block text-sm text-accent hover:underline">
-            {t('nav.services')} →
-          </Link>
+          <p className="mt-4 text-sm text-ink/75">{t('home.wantNote')}</p>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <h2 className="font-serif text-2xl font-semibold sm:text-3xl">{t('home.collectionTitle')}</h2>
-            <p className="mt-2 text-ink/75">{t('home.collectionLead')}</p>
-          </div>
-          <Link href="/collection" className="text-sm text-accent hover:underline">
-            {t('home.viewAll')} →
-          </Link>
-        </div>
-        <div className="mt-8">
-          <CollectionGrid items={featured} filter={false} />
-        </div>
+        <h2 className="font-serif text-2xl font-semibold sm:text-3xl">{t('home.processTitle')}</h2>
+        <ol className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[1, 2, 3, 4].map((n) => (
+            <li key={n} className="border-t-2 border-accent pt-4">
+              <span className="font-serif text-3xl text-accent/80">{n}</span>
+              <h3 className="mt-1 font-semibold">{t(`home.step${n}`)}</h3>
+              <p className="mt-1 text-[15px] leading-relaxed text-ink/85">{t(`home.step${n}Text`)}</p>
+            </li>
+          ))}
+        </ol>
+        <Link href="/contact" className="mt-8 inline-block rounded-sm bg-accent px-6 py-3 text-accent-ink hover:opacity-90">
+          {t('nav.contact')}
+        </Link>
       </section>
 
-      <section className="border-y border-line bg-card">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <h2 className="font-serif text-2xl font-semibold sm:text-3xl">{t('home.processTitle')}</h2>
-          <ol className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[1, 2, 3, 4].map((n) => (
-              <li key={n} className="border-t-2 border-accent pt-4">
-                <span className="font-serif text-3xl text-accent/80">{n}</span>
-                <h3 className="mt-1 font-semibold">{t(`home.step${n}`)}</h3>
-                <p className="mt-1 text-[15px] leading-relaxed text-ink/85">{t(`home.step${n}Text`)}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 pt-14 sm:px-6">
-        <div className="flex flex-col items-start justify-between gap-6 rounded-sm bg-ink p-8 text-white sm:flex-row sm:items-center sm:p-10">
-          <div>
-            <h2 className="font-serif text-2xl font-semibold">{t('home.pricingTitle')}</h2>
-            <p className="mt-2 text-white/75">{t('home.pricingLead')}</p>
-          </div>
-          <Link href="/pricing" className="shrink-0 rounded-sm bg-white px-6 py-3 text-ink hover:bg-white/90">
-            {t('home.pricingCta')}
-          </Link>
-        </div>
+      <section className="mx-auto max-w-6xl px-4 sm:px-6">
+        <Link href="/collection" className="flex flex-col justify-between gap-2 rounded-sm border border-line bg-card p-6 hover:border-ink/30 sm:flex-row sm:items-center">
+          <span>
+            <span className="block font-serif text-xl font-semibold">{t('home.referenceTitle')}</span>
+            <span className="mt-1 block text-[15px] text-ink/75">{t('home.referenceLead')}</span>
+          </span>
+          <span className="text-sm text-accent">→</span>
+        </Link>
       </section>
     </>
   );

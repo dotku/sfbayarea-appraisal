@@ -1,11 +1,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing';
 
 const NAV = [
   { href: '/', key: 'home' },
+  { href: '/items', key: 'items' },
   { href: '/services', key: 'services' },
   { href: '/collection', key: 'collection' },
   { href: '/pricing', key: 'pricing' },
@@ -43,7 +45,7 @@ export default function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 text-sm md:flex">
+        <nav className="hidden items-center gap-6 text-sm md:flex">
           {NAV.map((n) => (
             <Link key={n.href} href={n.href} aria-current={isActive(n.href) ? 'page' : undefined} className={linkClass(n.href)}>
               {t(`nav.${n.key}`)}
@@ -103,8 +105,11 @@ export default function SiteHeader() {
 
 function LocaleSwitch({ locale, pathname }: { locale: string; pathname: ReturnType<typeof usePathname> }) {
   const other = locale === 'zh' ? 'en' : 'zh';
+  // Dynamic routes (/items/[no]) need their params to build the other-language URL.
+  const params = useParams();
+  const href = { pathname, params } as unknown as Parameters<typeof Link>[0]['href'];
   return (
-    <Link href={pathname} locale={other} className="px-2 py-2 text-sm text-muted hover:text-ink">
+    <Link href={href} locale={other} className="px-2 py-2 text-sm text-muted hover:text-ink">
       {other === 'zh' ? '中文' : 'EN'}
     </Link>
   );

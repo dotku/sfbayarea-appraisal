@@ -12,6 +12,7 @@ export default function SiteFooter() {
           <p className="mt-2 text-sm leading-relaxed">{t('footer.about')}</p>
         </div>
         <nav className="grid grid-cols-2 gap-2 text-sm">
+          <Link href="/items" className="hover:text-white">{t('nav.items')}</Link>
           <Link href="/services" className="hover:text-white">{t('nav.services')}</Link>
           <Link href="/collection" className="hover:text-white">{t('nav.collection')}</Link>
           <Link href="/pricing" className="hover:text-white">{t('nav.pricing')}</Link>

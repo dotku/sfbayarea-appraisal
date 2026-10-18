@@ -51,6 +51,8 @@ export interface Item {
   id: string;
   item_no: string;
   title: string;
+  title_en: string;
+  is_public: boolean;
   category: Category;
   era: string;
   material: string;

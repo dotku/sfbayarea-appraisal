@@ -46,6 +46,8 @@ export async function saveItem(_: unknown, form: FormData): Promise<{ error?: st
 
   const row = {
     title: text(form, 'title', 160),
+    title_en: text(form, 'title_en', 160),
+    is_public: form.get('is_public') === 'on',
     category: oneOf(text(form, 'category'), CATEGORY_LABEL, 'other'),
     era: text(form, 'era', 200),
     material: text(form, 'material', 200),
@@ -75,6 +77,7 @@ export async function saveItem(_: unknown, form: FormData): Promise<{ error?: st
     return { error: '估价下限不能高于上限' };
   }
   const blocks = complianceBlocks(row);
+  if (blocks.length && row.is_public) return { error: `合规未通过的藏品不能在网站展示：${blocks.join('；')}` };
   if (blocks.length && (row.status === 'listed' || row.status === 'sold')) {
     return { error: `不能设为「${STATUS_LABEL[row.status]}」：${blocks.join('；')}` };
   }
@@ -85,6 +88,8 @@ export async function saveItem(_: unknown, form: FormData): Promise<{ error?: st
   if (res.error) return { error: `保存失败：${res.error.message}` };
 
   revalidatePath('/admin');
+  revalidatePath('/[locale]/items', 'layout');
+  revalidatePath('/[locale]', 'page');
   redirect(`/admin/items/${res.data.id}${id ? '?saved=1' : '?created=1'}`);
 }
 

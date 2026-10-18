@@ -96,6 +96,7 @@ export default async function ItemsPage({ searchParams }: { searchParams: Promis
                       {(i.estimate_low != null || i.estimate_high != null) && (
                         <span className="ml-2">估价 {usd(i.estimate_low)}–{usd(i.estimate_high)}</span>
                       )}
+                      {i.is_public && <span className="ml-2 text-xs text-gold">网站展示中</span>}
                       {blocks.length > 0 && <span className="ml-2 text-xs text-accent">⚠ 合规待处理</span>}
                     </p>
                   </div>

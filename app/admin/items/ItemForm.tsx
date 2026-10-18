@@ -18,6 +18,9 @@ export default function ItemForm({ item, consignors }: { item?: Item; consignors
         <Field label="品名 *" wide>
           <input name="title" required maxLength={160} defaultValue={item?.title} placeholder="例：清 青花缠枝莲纹盘" className={input} />
         </Field>
+        <Field label="英文品名（英文版网站用，可留空）" wide>
+          <input name="title_en" maxLength={160} defaultValue={item?.title_en} placeholder="e.g. Blue-and-white dish with lotus scroll" className={input} />
+        </Field>
         <Field label="门类">
           <select name="category" defaultValue={item?.category ?? 'ceramics'} className={input}>
             {Object.entries(CATEGORY_LABEL).map(([k, v]) => (
@@ -115,6 +118,9 @@ export default function ItemForm({ item, consignors }: { item?: Item; consignors
             ))}
           </select>
         </Field>
+        <div className="sm:col-span-2">
+          <Check name="is_public" defaultChecked={item?.is_public} label="在网站公开展示（只公开品名、门类、年代、材质、尺寸、品相、照片和估价；委托人、底价、备注不公开）" />
+        </div>
         <Field label="存放位置">
           <input name="location" defaultValue={item?.location} placeholder="例：仓库 A 架 3 层 / 仍在委托人处" className={input} />
         </Field>
