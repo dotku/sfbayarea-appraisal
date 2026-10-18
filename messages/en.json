@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "SF Bay Area Appraisal Association | Antiques, Art & Collectibles",
-    "description": "SF Bay Area Appraisal Association (in formation): collecting antiques, art and collectibles of every kind in the Bay Area, including Asian art, hardwood furniture, painting, jewelry and watches, trading cards, mid-century design and European and American decorative arts, with appraisal and valuation advice."
+    "title": "Peninsula Auctions | Antiques, Art & Collectibles in the SF Bay Area",
+    "description": "Peninsula Auctions is a San Francisco Bay Area auction house in preparation, collecting antiques, art and collectibles of every kind: Asian art, hardwood furniture, painting, jewelry and watches, trading cards, mid-century design and European and American decorative arts."
   },
   "brand": {
-    "name": "SF Bay Area Appraisal Association",
-    "short": "Bay Area Appraisal",
-    "en": "Antiques · Art · Collectibles"
+    "name": "Peninsula Auctions",
+    "short": "Peninsula Auctions",
+    "en": "San Francisco Bay Area"
   },
   "nav": {
     "home": "Home",
@@ -21,7 +21,7 @@
     "items": "Objects",
     "collecting": "What we collect"
   },
-  "status": "The association is being formed: we are recruiting our first appraisers and partner institutions, and bookings open soon.",
+  "status": "Peninsula Auctions is preparing its first sale. We are collecting consignments now; registration opens soon.",
   "home": {
     "eyebrow": "San Francisco Bay Area · Antiques, art and collectibles",
     "title": "Antiques, art and collectibles, collected in the Bay Area",
@@ -59,7 +59,7 @@
   },
   "services": {
     "title": "Services",
-    "lead": "Appraisals by category and purpose. Each purpose calls for a different type of value and report.",
+    "lead": "Appraisals for consignment and for other purposes. Each purpose calls for a different type of value and report.",
     "categoriesTitle": "Categories",
     "ceramics": "Ceramics",
     "ceramicsText": "Imperial and private-kiln wares of every period: blue-and-white, famille rose, monochromes, Song celadons and Jun ware.",
@@ -88,7 +88,7 @@
     "deliverable3": "Evidence, references and comparable sales",
     "deliverable4": "Type of value, effective date and limiting conditions",
     "standardsTitle": "Our commitments",
-    "standardsText": "The association will require every appraiser to write appraisal reports under the Uniform Standards of Professional Appraisal Practice (USPAP); not to buy or sell objects they appraise, and to disclose any interest in the client or the object; and to state plainly where the evidence is inconclusive instead of going beyond it. Each appraiser's background and credentials will be published when bookings open."
+    "standardsText": "Written appraisals follow the Uniform Standards of Professional Appraisal Practice (USPAP). Auction estimates are our honest opinion of what an object should fetch, and reserves are agreed with the consignor in writing. We disclose any interest we have in an object, and where the evidence is inconclusive we say so instead of going beyond it. Our specialists' backgrounds will be published before the first sale."
   },
   "collection": {
     "title": "Reference catalogue",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Fees",
-    "lead": "Estimated fee ranges while the association is being formed; they may change before bookings open. Fees are confirmed in writing before any work starts and depend on the object, the research needed and the purpose of the report.",
+    "lead": "Estimated fee ranges for appraisals while we prepare to open; they may change. Fees are confirmed in writing before any work starts and depend on the object, the research needed and the purpose of the report.",
     "consultation": "Initial consultation",
     "consultationPrice": "$150",
     "consultationDesc": "30 minutes to discuss your objects and needs, and whether we need to see them in person.",
@@ -141,7 +141,7 @@
     "title": "Booking: opening soon",
     "lead": "Bookings open soon. Meanwhile, use the checklist below to get ready; it lets us give a first opinion faster.",
     "comingSoon": "Contact details coming soon",
-    "comingSoonText": "The association is being formed. Our phone, email and booking form will be listed here once they are open.",
+    "comingSoonText": "We are preparing to open. Our phone, email and consignment form will be listed here once they are ready.",
     "email": "Email",
     "phone": "Phone",
     "wechat": "WeChat",
@@ -154,9 +154,9 @@
     "areaValue": "San Francisco, Peninsula, East Bay, South Bay"
   },
   "footer": {
-    "about": "Promoting professional appraisal standards and serving the Bay Area with integrity.",
+    "about": "A San Francisco Bay Area auction house for antiques, art and collectibles.",
     "credits": "Images: The Metropolitan Museum of Art Open Access (CC0)",
-    "copyright": "© 2026 SF Bay Area Appraisal Association"
+    "copyright": "© 2026 Peninsula Auctions"
   },
   "items": {
     "title": "Objects",

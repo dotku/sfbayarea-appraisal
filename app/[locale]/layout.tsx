@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
   return {
-    title: { default: t('title'), template: `%s | ${locale === 'zh' ? '舊金山灣區鑒寶協會' : 'SF Bay Area Appraisal Association'}` },
+    title: { default: t('title'), template: `%s | ${locale === 'zh' ? '半島拍賣行' : 'Peninsula Auctions'}` },
     description: t('description'),
   };
 }

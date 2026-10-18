@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "SF Bay Area Appraisal Association | Antigüedades, arte y coleccionables",
-    "description": "SF Bay Area Appraisal Association (en formación): reunimos antigüedades, arte y coleccionables de todo tipo en el Área de la Bahía, incluidos arte asiático, muebles de maderas nobles, pintura, joyería y relojes, cartas coleccionables, diseño de mediados de siglo y artes decorativas europeas y americanas, con asesoría de tasación y valoración."
+    "title": "Peninsula Auctions | Antigüedades, arte y coleccionables en el Área de la Bahía",
+    "description": "Peninsula Auctions es una casa de subastas del Área de la Bahía de San Francisco en preparación, que reúne antigüedades, arte y coleccionables de todo tipo: arte asiático, muebles de maderas nobles, pintura, joyería y relojes, cartas coleccionables, diseño de mediados de siglo y artes decorativas europeas y americanas."
   },
   "brand": {
-    "name": "SF Bay Area Appraisal Association",
-    "short": "Bay Area Appraisal",
-    "en": "Antigüedades · Arte · Coleccionables"
+    "name": "Peninsula Auctions",
+    "short": "Peninsula Auctions",
+    "en": "Área de la Bahía de San Francisco"
   },
   "nav": {
     "home": "Inicio",
@@ -21,7 +21,7 @@
     "items": "Objetos",
     "collecting": "Qué buscamos"
   },
-  "status": "La asociación está en formación: estamos incorporando a nuestros primeros tasadores e instituciones colaboradoras, y las citas se abrirán pronto.",
+  "status": "Peninsula Auctions prepara su primera subasta. Ya estamos reuniendo consignaciones; el registro se abrirá pronto.",
   "home": {
     "eyebrow": "Área de la Bahía de San Francisco · Antigüedades, arte y coleccionables",
     "title": "Antigüedades, arte y coleccionables, reunidos en el Área de la Bahía",
@@ -59,7 +59,7 @@
   },
   "services": {
     "title": "Servicios",
-    "lead": "Tasaciones por categoría y finalidad. Cada finalidad requiere un tipo de valor y de informe distinto.",
+    "lead": "Tasaciones para consignación y para otras finalidades. Cada finalidad requiere un tipo de valor y de informe distinto.",
     "categoriesTitle": "Categorías",
     "ceramics": "Cerámica",
     "ceramicsText": "Piezas imperiales y de hornos privados de todas las épocas: azul y blanco, famille rose, monocromos, celadones Song y cerámica Jun.",
@@ -88,7 +88,7 @@
     "deliverable3": "Fundamentos, referencias y ventas comparables",
     "deliverable4": "Tipo de valor, fecha efectiva y condiciones limitantes",
     "standardsTitle": "Nuestros compromisos",
-    "standardsText": "La asociación exigirá a cada tasador redactar sus informes conforme a las Normas Uniformes de Práctica Profesional de Tasación (USPAP); no comprar ni vender los objetos que tase y declarar cualquier interés en el cliente o el objeto; y señalar con claridad cuándo la evidencia no es concluyente, sin ir más allá de ella. La trayectoria y las acreditaciones de cada tasador se publicarán cuando se abran las citas."
+    "standardsText": "Las tasaciones escritas siguen las Normas Uniformes de Práctica Profesional de Tasación (USPAP). Las estimaciones de subasta son nuestra opinión honesta de lo que un objeto debería alcanzar, y los precios de reserva se acuerdan por escrito con el consignante. Declaramos cualquier interés que tengamos en un objeto y, cuando la evidencia no es concluyente, lo decimos en lugar de ir más allá. La trayectoria de nuestros especialistas se publicará antes de la primera subasta."
   },
   "collection": {
     "title": "Catálogo de referencia",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Tarifas",
-    "lead": "Rangos de tarifas estimados mientras la asociación está en formación; pueden cambiar antes de abrir las citas. Las tarifas se confirman por escrito antes de empezar y dependen del objeto, la investigación necesaria y la finalidad del informe.",
+    "lead": "Rangos estimados de tarifas de tasación mientras preparamos la apertura; pueden cambiar. Las tarifas se confirman por escrito antes de empezar y dependen del objeto, la investigación necesaria y la finalidad del informe.",
     "consultation": "Consulta inicial",
     "consultationPrice": "$150",
     "consultationDesc": "30 minutos para hablar de sus objetos y necesidades, y de si necesitamos verlos en persona.",
@@ -141,7 +141,7 @@
     "title": "Citas: próximamente",
     "lead": "Las citas se abrirán pronto. Mientras tanto, use la lista de abajo para prepararse; así podremos darle una primera opinión más rápido.",
     "comingSoon": "Datos de contacto próximamente",
-    "comingSoonText": "La asociación está en formación. Nuestro teléfono, correo y formulario de citas aparecerán aquí cuando estén disponibles.",
+    "comingSoonText": "Estamos preparando la apertura. Nuestro teléfono, correo y formulario de consignación aparecerán aquí cuando estén listos.",
     "email": "Correo",
     "phone": "Teléfono",
     "wechat": "WeChat",
@@ -154,9 +154,9 @@
     "areaValue": "San Francisco, la Península, East Bay y South Bay"
   },
   "footer": {
-    "about": "Promovemos estándares profesionales de tasación y servimos al Área de la Bahía con integridad.",
+    "about": "Una casa de subastas del Área de la Bahía de San Francisco para antigüedades, arte y coleccionables.",
     "credits": "Imágenes: The Metropolitan Museum of Art, acceso abierto (CC0)",
-    "copyright": "© 2026 SF Bay Area Appraisal Association"
+    "copyright": "© 2026 Peninsula Auctions"
   },
   "items": {
     "title": "Objetos",

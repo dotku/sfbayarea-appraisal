@@ -37,7 +37,7 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-30 border-b border-line bg-paper/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2.5">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-sm bg-accent font-serif text-sm font-semibold tracking-tight text-accent-ink">SF</span>
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-sm bg-accent font-serif text-sm font-semibold tracking-tight text-accent-ink">PA</span>
           <span className="leading-tight">
             <span className="block font-serif text-base font-semibold sm:hidden">{t('brand.short')}</span>
             <span className="hidden font-serif text-lg font-semibold sm:block">{t('brand.name')}</span>
