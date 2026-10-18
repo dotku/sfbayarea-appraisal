@@ -4,7 +4,10 @@ import type { Category } from '@/lib/admin/items';
 // pages). Each groups registry categories; its page shows the public objects in
 // those categories as case products. Copy lives in messages under
 // departments.d.<slug>; `target` reuses the matching collecting.g.<key> text
-// (what we look for / what to prepare / limits). Images are illustrations only.
+// (what we look for / what to prepare / limits) — when it is null the
+// department has its own what/prep/limit under departments.d.<slug>.
+// `estate` departments list objects by source (estate clear-outs) instead of
+// category. Images are illustrations only.
 
 type L = { zh: string; en: string };
 const MET = (zh: string, en: string): L => ({ zh: `${zh}，大都會藝術博物館藏（CC0）`, en: `${en}. The Metropolitan Museum of Art (CC0)` });
@@ -46,6 +49,13 @@ export const DEPARTMENTS = [
     credit: MET('比爾施塔特《優勝美地谷默塞德河》', 'Albert Bierstadt, Merced River, Yosemite Valley, 1866'),
   },
   {
+    slug: 'modern-contemporary-art',
+    categories: ['modern_art'],
+    target: null,
+    image: '/collection/targets/modern.jpg',
+    credit: MET('梵高《麥田與絲柏》', 'Vincent van Gogh, Wheat Field with Cypresses, 1889'),
+  },
+  {
     slug: 'jewelry-watches',
     categories: ['jewelry'],
     target: 'jewelry',
@@ -58,6 +68,13 @@ export const DEPARTMENTS = [
     target: 'cards',
     image: '/collection/targets/cards.jpg',
     credit: MET('T206 球員卡（Delehanty）', 'Delehanty, T206 White Border series, 1909–11'),
+  },
+  {
+    slug: 'coins-medals',
+    categories: ['coins'],
+    target: null,
+    image: '/collection/targets/coins.jpg',
+    credit: MET('聖高登斯 美國 20 美元金幣', 'Augustus Saint-Gaudens, United States twenty-dollar gold piece, 1907 design'),
   },
   {
     slug: '20th-century-design',
@@ -76,9 +93,28 @@ export const DEPARTMENTS = [
     image: '/collection/targets/western.jpg',
     credit: MET('保羅·里維爾 銀茶壺', 'Paul Revere Jr., teapot, ca. 1782'),
   },
-] as const satisfies readonly { slug: string; categories: readonly Category[]; target: string; image: string; credit: L }[];
+  {
+    slug: 'european-ceramics-glass',
+    categories: ['euro_ceramics'],
+    target: null,
+    image: '/collection/targets/euroceramics.jpg',
+    credit: MET('塞弗爾瓷廠 香料瓶', 'Sèvres Manufactory, potpourri vase, 1757'),
+  },
+  {
+    slug: 'private-collections-estates',
+    categories: [],
+    estate: true,
+    target: null,
+    image: '/collection/targets/estates.jpg',
+    credit: MET('羅伯特·亞當 蘭斯當府餐廳', 'Robert Adam, dining room from Lansdowne House, 1766–69'),
+  },
+] as const satisfies readonly { slug: string; categories: readonly Category[]; target: string | null; estate?: boolean; image: string; credit: L }[];
 
 export type Department = (typeof DEPARTMENTS)[number];
 
 export const departmentBySlug = (slug: string) => DEPARTMENTS.find((d) => d.slug === slug);
 export const departmentOf = (category: Category) => DEPARTMENTS.find((d) => (d.categories as readonly Category[]).includes(category));
+
+/** Does this public object belong on the department's page? */
+export const inDepartment = (d: Department, i: { category: Category; estate: boolean }) =>
+  'estate' in d && d.estate ? i.estate : (d.categories as readonly Category[]).includes(i.category);

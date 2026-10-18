@@ -195,7 +195,10 @@
       "jewelry": "Joyería y relojes",
       "california_art": "Pintura",
       "design": "Diseño de mediados de siglo",
-      "western": "Artes decorativas europeas y americanas"
+      "western": "Artes decorativas europeas y americanas",
+      "coins": "Monedas y medallas",
+      "modern_art": "Arte moderno y contemporáneo",
+      "euro_ceramics": "Cerámica y vidrio europeos"
     },
     "grade": "Calificación"
   },
@@ -329,7 +332,40 @@
         "name": "Platería y artes decorativas",
         "short": "Plata europea y americana, mobiliario, porcelana y vidrio.",
         "intro": "Plata, mobiliario, porcelana, vidrio y textiles europeos y americanos. Los contrastes, las marcas del platero y el estado de conservación determinan aquí el valor, y los fotografiamos en detalle para cada lote del catálogo."
+      },
+      "modern-contemporary-art": {
+        "name": "Arte moderno y contemporáneo",
+        "short": "Pintura, obra gráfica y escultura del siglo XX a la actualidad.",
+        "intro": "Pintura, obra sobre papel, obra gráfica y escultura modernas y contemporáneas, desde las primeras vanguardias hasta artistas vivos. En este mercado, las firmas, la numeración de la tirada, las etiquetas de galería y los certificados de autenticidad pesan de verdad.",
+        "what": "Pintura moderna y contemporánea, obra sobre papel, grabados de tirada limitada y múltiples, y escultura",
+        "prep": "Fotos del anverso y del reverso, datos de la firma y la tirada, facturas o certificados de galería, historial de exposiciones",
+        "limit": "—"
+      },
+      "coins-medals": {
+        "name": "Monedas y medallas",
+        "short": "Monedas de EE. UU. y del mundo, oro, metales en lingote y medallas conmemorativas.",
+        "intro": "Monedas de Estados Unidos y del mundo, piezas de oro y plata, medallas conmemorativas y fichas. Al igual que con las cartas, la calificación independiente (PCGS, NGC) determina buena parte del valor, y trabajamos a partir de esas calificaciones.",
+        "what": "Monedas de EE. UU. y del mundo, monedas de oro y plata, series proof, medallas conmemorativas y fichas; preferentemente monedas calificadas",
+        "prep": "Empresa de calificación, nota y número de certificado de las monedas calificadas; fotos nítidas de ambas caras; estuches y documentos originales, si los hay",
+        "limit": "No aceptamos monedas falsas o alteradas, ni monedas sin origen lícito"
+      },
+      "european-ceramics-glass": {
+        "name": "Cerámica y vidrio europeos",
+        "short": "Porcelana, loza y vidrio de manufacturas europeas.",
+        "intro": "Porcelana y loza europeas de manufacturas como Meissen y Sèvres, junto con vidrio artístico y cerámica de autor. Las marcas de manufactura y de pintor y el estado de conservación, incluida cualquier restauración, son centrales en cada lote.",
+        "what": "Porcelana y loza europeas, vidrio artístico, cerámica de autor y vajilla decorativa",
+        "prep": "Fotos de las marcas de manufactura y de pintor, detalles de cualquier desconchado, grieta o restauración, medidas",
+        "limit": "—"
+      },
+      "private-collections-estates": {
+        "name": "Colecciones privadas y herencias",
+        "short": "Colecciones completas, contenidos de viviendas y herencias en consignación.",
+        "intro": "Muchos de los mejores objetos del Área de la Bahía proceden de colecciones familiares conservadas durante años y de herencias. Podemos revisar una colección o una vivienda completa en una sola visita, seleccionar lo que merece salir a subasta en todos los departamentos y encargarnos de la catalogación y la venta para albaceas y familias.",
+        "what": "Colecciones completas, contenidos de viviendas y herencias de todos los departamentos, para familias, albaceas y fideicomisarios",
+        "prep": "Un inventario o fotos por estancias si los hay, registros de compra o tasaciones anteriores, y quién está autorizado para consignar",
+        "limit": "—"
       }
-    }
+    },
+    "directory": "Todos los departamentos (A–Z)"
   }
 }

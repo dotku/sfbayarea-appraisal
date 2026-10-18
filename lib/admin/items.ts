@@ -13,8 +13,11 @@ export const CATEGORY_LABEL = {
   cards: '卡牌',
   jewelry: '珠宝名表',
   california_art: '绘画（油画、水彩、版画等）',
+  modern_art: '现当代艺术',
   design: '中世纪现代设计',
-  western: '欧美家具与装饰',
+  western: '欧美家具与银器',
+  euro_ceramics: '欧洲陶瓷与玻璃',
+  coins: '钱币与勋章',
   other: '其他',
 } as const;
 

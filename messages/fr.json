@@ -195,7 +195,10 @@
       "jewelry": "Bijoux et montres",
       "california_art": "Peinture",
       "design": "Design du milieu du XXe siècle",
-      "western": "Arts décoratifs européens et américains"
+      "western": "Arts décoratifs européens et américains",
+      "coins": "Monnaies et médailles",
+      "modern_art": "Art moderne et contemporain",
+      "euro_ceramics": "Céramiques et verre européens"
     },
     "grade": "Note"
   },
@@ -329,7 +332,40 @@
         "name": "Argenterie et arts décoratifs",
         "short": "Argenterie européenne et américaine, mobilier, porcelaine et verre.",
         "intro": "Argenterie, mobilier, porcelaine, verrerie et textiles européens et américains. Poinçons, marques d'orfèvre et état de conservation déterminent ici la valeur, et nous les photographions en détail pour chaque notice du catalogue."
+      },
+      "modern-contemporary-art": {
+        "name": "Art moderne et contemporain",
+        "short": "Peinture, estampes et sculpture du XXe siècle à nos jours.",
+        "intro": "Peintures, œuvres sur papier, estampes et sculptures modernes et contemporaines, des débuts du modernisme aux artistes vivants. Sur ce marché, signatures, numéros de tirage, étiquettes de galerie et certificats d'authenticité pèsent réellement.",
+        "what": "Peintures modernes et contemporaines, œuvres sur papier, estampes à tirage limité et multiples, et sculpture",
+        "prep": "Photos recto et verso, détails de la signature et du tirage, factures ou certificats de galerie, historique d'expositions",
+        "limit": "—"
+      },
+      "coins-medals": {
+        "name": "Monnaies et médailles",
+        "short": "Monnaies américaines et du monde, or, métaux précieux et médailles commémoratives.",
+        "intro": "Monnaies des États-Unis et du monde, pièces d'or et d'argent, médailles commémoratives et jetons. Comme pour les cartes, la gradation indépendante (PCGS, NGC) détermine une grande part de la valeur, et nous travaillons à partir de ces notes.",
+        "what": "Monnaies américaines et du monde, pièces d'or et d'argent, coffrets BE (proof), médailles commémoratives et jetons ; monnaies gradées de préférence",
+        "prep": "Pour les monnaies gradées : société de gradation, note et numéro de certificat ; photos nettes des deux faces ; étuis et documents d'origine le cas échéant",
+        "limit": "Nous n'acceptons ni monnaies contrefaites ou altérées, ni monnaies d'origine illicite"
+      },
+      "european-ceramics-glass": {
+        "name": "Céramiques et verre européens",
+        "short": "Porcelaine, faïence et verre des manufactures européennes.",
+        "intro": "Porcelaine et faïence européennes de manufactures telles que Meissen et Sèvres, ainsi que verre d'art et céramique d'atelier. Les marques de manufacture et de peintre et l'état, y compris toute restauration, sont au cœur de chaque notice.",
+        "what": "Porcelaine et faïence européennes, verre d'art, céramique d'atelier et vaisselle décorative",
+        "prep": "Photos des marques de manufacture et de peintre, gros plans des éventuels éclats, fêlures ou restaurations, dimensions",
+        "limit": "—"
+      },
+      "private-collections-estates": {
+        "name": "Collections particulières et successions",
+        "short": "Collections entières, contenus de maisons et successions.",
+        "intro": "Bon nombre des plus beaux objets de la baie de San Francisco proviennent de collections familiales conservées de longue date et de successions. Nous pouvons examiner une collection ou une maison entière en une seule visite, sélectionner ce qui relève de la vente aux enchères dans tous nos départements, et prendre en charge le catalogage et la vente pour les exécuteurs testamentaires et les familles.",
+        "what": "Collections entières, contenus de maisons et successions, tous départements confondus, pour les familles, exécuteurs testamentaires et fiduciaires",
+        "prep": "Un inventaire ou des photos pièce par pièce si possible, les justificatifs d'achat ou expertises antérieures, et l'identité de la personne habilitée à confier les biens",
+        "limit": "—"
       }
-    }
+    },
+    "directory": "Tous les départements de A à Z"
   }
 }

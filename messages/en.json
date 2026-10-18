@@ -195,7 +195,10 @@
       "jewelry": "Jewelry & watches",
       "california_art": "Painting",
       "design": "Mid-century design",
-      "western": "European & American decorative arts"
+      "western": "European & American decorative arts",
+      "coins": "Coins & medals",
+      "modern_art": "Modern & contemporary art",
+      "euro_ceramics": "European ceramics & glass"
     },
     "grade": "Grade"
   },
@@ -329,7 +332,40 @@
         "name": "Silver & Decorative Arts",
         "short": "European and American silver, furniture, porcelain and glass.",
         "intro": "European and American silver, furniture, porcelain, glass and textiles. Hallmarks, makers' marks and condition decide value here, and we photograph them closely for every catalogue entry."
+      },
+      "modern-contemporary-art": {
+        "name": "Modern & Contemporary Art",
+        "short": "Paintings, prints and sculpture from the 20th century to today.",
+        "intro": "Modern and contemporary paintings, works on paper, prints and sculpture, from early modernism to living artists. Signatures, edition numbers, gallery labels and certificates of authenticity carry real weight in this market.",
+        "what": "Modern and contemporary paintings, works on paper, limited-edition prints and multiples, and sculpture",
+        "prep": "Front and back photos, signature and edition details, gallery invoices or certificates, exhibition history",
+        "limit": "—"
+      },
+      "coins-medals": {
+        "name": "Coins & Medals",
+        "short": "US and world coins, gold, bullion and commemorative medals.",
+        "intro": "United States and world coins, gold and silver coinage, commemorative medals and tokens. As with cards, independent grading (PCGS, NGC) sets much of the value, and we work from those grades.",
+        "what": "US and world coins, gold and silver coins, proof sets, commemorative medals and tokens; graded coins preferred",
+        "prep": "Grading company, grade and certificate number for graded coins; clear photos of both sides; any original holders and papers",
+        "limit": "We do not accept counterfeit or altered coins, or coins with no lawful origin"
+      },
+      "european-ceramics-glass": {
+        "name": "European Ceramics & Glass",
+        "short": "Porcelain, pottery and glass from European factories.",
+        "intro": "European porcelain and pottery from factories such as Meissen and Sèvres, along with art glass and studio ceramics. Factory marks, painters' marks and condition, including any restoration, are central to every entry.",
+        "what": "European porcelain and pottery, art glass, studio ceramics and decorative tableware",
+        "prep": "Photos of factory and painter marks, close-ups of any chips, cracks or restoration, dimensions",
+        "limit": "—"
+      },
+      "private-collections-estates": {
+        "name": "Private Collections & Estates",
+        "short": "Whole collections, house contents and estate consignments.",
+        "intro": "Many of the best objects in the Bay Area come from long-held family collections and estates. We can review a whole collection or house in one visit, sort what belongs at auction across every department, and handle cataloguing and sale for executors and families.",
+        "what": "Whole collections, house contents and estates across every department, for families, executors and trustees",
+        "prep": "An inventory or room-by-room photos if available, any purchase records or past appraisals, and who is authorised to consign",
+        "limit": "—"
       }
-    }
+    },
+    "directory": "All departments A–Z"
   }
 }

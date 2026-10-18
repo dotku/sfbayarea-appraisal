@@ -19,11 +19,13 @@ export interface PublicItem {
   estimateLow: number | null;
   estimateHigh: number | null;
   stage: 'collected' | 'upcoming' | 'sold';
+  /** Came from an estate / house clear-out (source channel only, never the consignor). */
+  estate: boolean;
   images: string[];
 }
 
 const COLUMNS =
-  'item_no, title, title_en, category, era, material, dimensions, marks, grade_company, grade, cert_no, condition, estimate_low, estimate_high, status, images, is_public, has_ivory_rhino, is_archaeological, has_regulated_wood, provenance_documented';
+  'item_no, title, title_en, category, era, material, dimensions, marks, grade_company, grade, cert_no, condition, estimate_low, estimate_high, status, source_channel, images, is_public, has_ivory_rhino, is_archaeological, has_regulated_wood, provenance_documented';
 
 const stage = (s: Status): PublicItem['stage'] => (s === 'listed' ? 'upcoming' : s === 'sold' ? 'sold' : 'collected');
 
@@ -46,6 +48,7 @@ async function shape(rows: Item[], allImages: boolean): Promise<PublicItem[]> {
     estimateLow: r.estimate_low,
     estimateHigh: r.estimate_high,
     stage: stage(r.status),
+    estate: r.source_channel === 'estate',
     images: (allImages ? r.images : r.images.slice(0, 1)).map((p) => urls[p]).filter(Boolean),
   }));
 }
@@ -66,7 +69,8 @@ export async function getPublicItem(no: string): Promise<PublicItem | null> {
 // Registry categories grouped like the target categories (lib/targets.ts); the
 // Chinese & Asian art group covers every category not listed here.
 const GROUP: Partial<Record<Category, string>> = {
-  furniture: 'furniture', cards: 'cards', jewelry: 'jewelry', california_art: 'painting', design: 'design', western: 'western',
+  furniture: 'furniture', cards: 'cards', coins: 'cards', jewelry: 'jewelry', california_art: 'painting', modern_art: 'painting',
+  design: 'design', western: 'western', euro_ceramics: 'western',
 };
 const GROUP_ORDER = ['asian', 'furniture', 'cards', 'jewelry', 'painting', 'design', 'western'];
 

@@ -3,10 +3,9 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { DEPARTMENTS, departmentBySlug } from '@/lib/departments';
+import { DEPARTMENTS, departmentBySlug, inDepartment } from '@/lib/departments';
 import { listPublicItems } from '@/lib/publicItems';
 import { CONTACT } from '@/lib/site';
-import type { Category } from '@/lib/admin/items';
 import ItemCard from '@/components/ItemCard';
 
 export const revalidate = 1800;
@@ -26,8 +25,10 @@ export default async function DepartmentPage({ params }: { params: Promise<{ slu
   const t = await getTranslations('departments');
   const c = await getTranslations('collecting');
   const lang = (await getLocale()) === 'zh' ? 'zh' : 'en';
-  const items = (await listPublicItems()).filter((i) => (d.categories as readonly Category[]).includes(i.category));
-  const limit = c(`g.${d.target}.limit`);
+  const items = (await listPublicItems()).filter((i) => inDepartment(d, i));
+  // Departments without a matching target category carry their own copy.
+  const copy = (field: 'what' | 'prep' | 'limit') => (d.target ? c(`g.${d.target}.${field}`) : t(`d.${d.slug}.${field}`));
+  const limit = copy('limit');
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-10">
@@ -69,11 +70,11 @@ export default async function DepartmentPage({ params }: { params: Promise<{ slu
           <dl className="space-y-4 text-[15px] leading-relaxed">
             <div>
               <dt className="font-semibold">{t('lookFor')}</dt>
-              <dd className="mt-1 text-ink/85">{c(`g.${d.target}.what`)}</dd>
+              <dd className="mt-1 text-ink/85">{copy('what')}</dd>
             </div>
             <div>
               <dt className="font-semibold">{t('prepare')}</dt>
-              <dd className="mt-1 text-ink/85">{c(`g.${d.target}.prep`)}</dd>
+              <dd className="mt-1 text-ink/85">{copy('prep')}</dd>
             </div>
             {limit !== '—' && (
               <div>
