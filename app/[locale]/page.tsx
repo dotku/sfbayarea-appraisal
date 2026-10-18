@@ -57,10 +57,10 @@ export default async function HomePage() {
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
           <h2 className="font-serif text-2xl font-semibold sm:text-3xl">{t('home.wantTitle')}</h2>
           <p className="mt-2 text-ink/75">{t('home.wantLead')}</p>
-          <ol className="mt-8 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {TARGETS.map(({ key, tier, image }, n) => (
               <li key={key}>
-                <Link href={{ pathname: '/collecting', hash: key }} className="group flex h-full flex-col bg-card hover:bg-paper">
+                <Link href={{ pathname: '/collecting', hash: key }} className="group flex h-full flex-col overflow-hidden rounded-sm border border-line bg-card hover:border-ink/30">
                   <span className="relative block aspect-[4/3] bg-[#ece7df]">
                     <Image src={image} alt="" fill sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-contain p-3 transition group-hover:scale-[1.03]" />
                   </span>

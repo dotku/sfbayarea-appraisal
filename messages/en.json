@@ -53,7 +53,7 @@
     "wantNote": "We do not accept ivory or rhino horn. Archaeological objects need documented lawful provenance and export.",
     "referenceTitle": "Reference catalogue",
     "referenceLead": "What appraisers look at, shown on public museum objects.",
-    "wantLead": "The eight main categories of the Bay Area market.",
+    "wantLead": "The seven main categories of the Bay Area market.",
     "wantMore": "See what we look for in each category",
     "wantImages": "Category images are public museum objects shown for illustration, not objects we hold."
   },
@@ -190,8 +190,7 @@
       "japan_korea": "Japanese & Korean art",
       "cards": "Trading cards",
       "jewelry": "Jewelry & watches",
-      "california_art": "California painting",
-      "wine": "Wine",
+      "california_art": "Painting",
       "design": "Mid-century design",
       "western": "European & American decorative arts"
     },
@@ -232,20 +231,12 @@
         "limit": "No counterfeit brands"
       },
       "california": {
-        "name": "California painting",
+        "name": "Painting",
         "tier": "Also collecting",
-        "why": "A regional category with strong local demand.",
-        "what": "California Impressionism (plein air), Bay Area Figurative and contemporary works",
+        "why": "Strong local demand, with California schools especially active.",
+        "what": "Oils, watercolours, prints and drawings, including California Impressionism (plein air), Bay Area Figurative and contemporary works",
         "prep": "Front and back photos (including labels and inscriptions), dimensions, exhibition or publication history",
         "limit": "—"
-      },
-      "wine": {
-        "name": "Wine",
-        "tier": "Registering interest",
-        "why": "Next to Napa and Sonoma, fine wine collecting is active.",
-        "what": "Fine wine, cellar collections and large formats",
-        "prep": "Label and fill-level photos, storage history",
-        "limit": "Wine auctions need a California liquor licence; until we hold one we only register interest and do not offer wine for sale"
       },
       "design": {
         "name": "Mid-century modern design",
@@ -265,7 +256,7 @@
       }
     },
     "title": "What we collect",
-    "lead": "We collect in the eight main categories of the Bay Area market. Chinese and Asian art and hardwood furniture come first; the other categories are registered alongside.",
+    "lead": "We collect in the seven main categories of the Bay Area market. Chinese and Asian art and hardwood furniture come first; the other categories are registered alongside.",
     "what": "We look for",
     "prep": "Please prepare",
     "limit": "Limits",

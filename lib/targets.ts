@@ -1,4 +1,4 @@
-// The eight target categories (徵集目標), ordered by Bay Area market size.
+// The seven target categories (徵集目標), ordered by Bay Area market size.
 // Copy lives in messages/*.json under collecting.g.<key>; `tier` drives the badge.
 // Images are illustrations only: open-licence museum objects, credited in `credit`.
 
@@ -43,13 +43,6 @@ export const TARGETS = [
     url: 'https://www.metmuseum.org/art/collection/search/10150',
   },
   {
-    key: 'wine',
-    tier: 'interest',
-    image: '/collection/targets/wine.jpg',
-    credit: { zh: `吹製玻璃酒瓶，1739–80 年，${MET.zh}`, en: `Wine bottle, free-blown glass, 1739–80. ${MET.en}` },
-    url: 'https://www.metmuseum.org/art/collection/search/9867',
-  },
-  {
     key: 'design',
     tier: 'also',
     image: '/collection/targets/design.jpg',
@@ -69,4 +62,4 @@ export const TARGETS = [
 ] as const;
 
 export const tierClass = (tier: (typeof TARGETS)[number]['tier']) =>
-  tier === 'first' ? 'bg-accent text-accent-ink' : tier === 'interest' ? 'border border-gold/60 bg-card text-gold' : 'border border-line bg-card text-ink/70';
+  tier === 'first' ? 'bg-accent text-accent-ink' : 'border border-line bg-card text-ink/70';
