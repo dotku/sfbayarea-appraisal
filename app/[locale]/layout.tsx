@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Noto_Serif_TC } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -8,12 +7,9 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import './globals.css';
 
-const serif = Noto_Serif_TC({
-  variable: '--font-noto-serif',
-  weight: ['600', '700'],
-  subsets: ['latin'],
-  preload: false,
-});
+// Noto Serif TC via a stylesheet link: next/font downloads ~200 CJK subset
+// files at build time, which fails on Vercel's Turbopack build.
+const SERIF_CSS = 'https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700&display=swap';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -41,7 +37,12 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale === 'zh' ? 'zh-Hant' : 'en'}>
-      <body className={`${serif.variable} antialiased`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="stylesheet" href={SERIF_CSS} />
+      </head>
+      <body className="antialiased">
         <NextIntlClientProvider messages={messages}>
           <SiteHeader />
           <main>{children}</main>

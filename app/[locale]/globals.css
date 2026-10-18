@@ -21,7 +21,7 @@
   --color-accent-ink: var(--accent-ink);
   --color-gold: var(--gold);
   --font-sans: "PingFang TC", "PingFang SC", "Hiragino Sans", "Noto Sans TC", system-ui, sans-serif;
-  --font-serif: var(--font-noto-serif), "Songti TC", "Noto Serif TC", serif;
+  --font-serif: "Noto Serif TC", "Songti TC", serif;
 }
 
 body {
