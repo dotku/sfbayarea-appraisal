@@ -17,8 +17,12 @@ export default async function DepartmentsPage() {
   const t = await getTranslations('departments');
   const items = await listPublicItems();
   const locale = await getLocale();
-  // A–Z directory of department names in the current language.
-  const az = [...DEPARTMENTS].sort((a, b) => t(`d.${a.slug}.name`).localeCompare(t(`d.${b.slug}.name`), locale));
+  // A–Z directory of department names in the current language; Valuations is a
+  // service rather than a department, so it links to the services page.
+  const az = [
+    ...DEPARTMENTS.map((d) => ({ key: d.slug, name: t(`d.${d.slug}.name`), href: { pathname: '/departments/[slug]' as const, params: { slug: d.slug } } })),
+    { key: 'valuations', name: t('valuations'), href: '/services' as const },
+  ].sort((a, b) => a.name.localeCompare(b.name, locale));
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-14">
@@ -28,10 +32,10 @@ export default async function DepartmentsPage() {
       <nav aria-label={t('directory')} className="mt-6 rounded-sm border border-line bg-card p-4 sm:mt-8 sm:p-5">
         <h2 className="text-sm font-semibold text-muted">{t('directory')}</h2>
         <ul className="mt-2 grid grid-cols-1 gap-x-6 gap-y-1 text-[15px] sm:grid-cols-2 lg:grid-cols-3">
-          {az.map((d) => (
-            <li key={d.slug}>
-              <Link href={{ pathname: '/departments/[slug]', params: { slug: d.slug } }} className="block py-1 hover:text-accent hover:underline">
-                {t(`d.${d.slug}.name`)}
+          {az.map((e) => (
+            <li key={e.key}>
+              <Link href={e.href} className="block py-1 hover:text-accent hover:underline">
+                {e.name}
               </Link>
             </li>
           ))}

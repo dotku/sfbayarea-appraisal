@@ -70,7 +70,8 @@ export async function getPublicItem(no: string): Promise<PublicItem | null> {
 // Chinese & Asian art group covers every category not listed here.
 const GROUP: Partial<Record<Category, string>> = {
   furniture: 'furniture', cards: 'cards', coins: 'cards', jewelry: 'jewelry', california_art: 'painting', modern_art: 'painting',
-  design: 'design', western: 'western', euro_ceramics: 'western',
+  design: 'design', western: 'western', euro_ceramics: 'western', old_masters: 'painting', clocks: 'western', interiors: 'western',
+  antiquities: 'western', african_oceanic: 'western', arms_armour: 'western',
 };
 const GROUP_ORDER = ['asian', 'furniture', 'cards', 'jewelry', 'painting', 'design', 'western'];
 

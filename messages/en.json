@@ -198,7 +198,13 @@
       "western": "European & American decorative arts",
       "coins": "Coins & medals",
       "modern_art": "Modern & contemporary art",
-      "euro_ceramics": "European ceramics & glass"
+      "euro_ceramics": "European ceramics & glass",
+      "old_masters": "Old Masters & European art",
+      "clocks": "Clocks & instruments",
+      "interiors": "Interiors",
+      "antiquities": "Antiquities",
+      "african_oceanic": "African & Oceanic art",
+      "arms_armour": "Arms & armour"
     },
     "grade": "Grade"
   },
@@ -364,8 +370,57 @@
         "what": "Whole collections, house contents and estates across every department, for families, executors and trustees",
         "prep": "An inventory or room-by-room photos if available, any purchase records or past appraisals, and who is authorised to consign",
         "limit": "—"
+      },
+      "old-masters-european-art": {
+        "name": "Old Masters & European Art",
+        "short": "European and British paintings, drawings and prints before 1900.",
+        "intro": "Old Master and 19th-century European and British paintings, drawings and prints. Attribution is the central question: we study the support, ground and paint, the back of the work and any labels, seals or inscriptions, and we say plainly when a work is “circle of”, “follower of” or “after” a master.",
+        "what": "Old Master paintings and drawings, 19th-century European and British paintings, watercolours and prints, portrait miniatures",
+        "prep": "Front and back photos, including the stretcher or panel, labels, seals and inscriptions; dimensions; any earlier attributions, exhibitions or publications",
+        "limit": "We do not accept works with unresolved provenance gaps or claims for the years 1933–45"
+      },
+      "clocks": {
+        "name": "Clocks & Instruments",
+        "short": "Bracket, mantel, carriage and longcase clocks, barometers and instruments.",
+        "intro": "English and Continental bracket, mantel, carriage and longcase clocks, with barometers and scientific instruments. Value depends on the maker and on whether movement, dial and case are original and have always belonged together, so we examine all three.",
+        "what": "Bracket, mantel, carriage and longcase clocks, regulators, barometers, scientific and navigational instruments",
+        "prep": "Photos of the dial, the movement (back plate and any signature), the case, key and pendulum; whether it runs; any service records",
+        "limit": "Longcase clocks are collected by our team; please do not ship them assembled"
+      },
+      "interiors": {
+        "name": "Interiors",
+        "short": "Furniture, lighting, mirrors, rugs and decorative objects for the home.",
+        "intro": "Decorative furniture, lighting, mirrors, rugs and carpets, and the objects that furnish a room, from period pieces to good later reproductions. Interiors sales suit estate clear-outs and downsizing, and we can take the contents of a whole room.",
+        "what": "Decorative furniture, chandeliers and lamps, mirrors, rugs and carpets, garden statuary, pictures and decorative objects",
+        "prep": "Photos of each piece and of the room as a whole, approximate dimensions, any labels or receipts; for rugs, photos of the front and back",
+        "limit": "Lamps and chandeliers are sold as decorative objects; buyers must have the wiring checked before use"
+      },
+      "antiquities": {
+        "name": "Antiquities",
+        "short": "Egyptian, Greek, Roman and Near Eastern antiquities with documented provenance.",
+        "intro": "Ancient Egyptian, Greek, Roman and Near Eastern works of art. We sell antiquities only with documents showing that they left their country of origin lawfully, normally before 1970, and we check every object against stolen-art registers before cataloguing.",
+        "what": "Greek and Roman pottery, glass, bronzes and marbles, Egyptian works of art, Near Eastern seals, with documented history",
+        "prep": "Provenance documents dated before 1970 (old collection records, invoices, export licences or publications); photos from several angles",
+        "limit": "We do not accept objects without documented provenance, or any object recently excavated or unlawfully exported"
+      },
+      "african-oceanic-art": {
+        "name": "African & Oceanic Art",
+        "short": "Sculpture, masks and objects from Africa and the Pacific Islands.",
+        "intro": "Sculpture, masks, textiles and objects made for use in Africa and the Pacific Islands. Value rests on age, signs of use and collection history, so early field-collection records and old photographs matter as much as the object itself.",
+        "what": "Masks and figures, headrests, stools and staffs, textiles, shields, with known collection history",
+        "prep": "Photos from several angles, including the base; any collection history, old labels, photographs or letters",
+        "limit": "We do not accept ivory, tortoiseshell or other protected materials, human remains, or sacred objects claimed by their communities"
+      },
+      "arms-armour": {
+        "name": "Arms & Armour",
+        "short": "Antique swords, edged weapons, armour and helmets.",
+        "intro": "European, Asian and Islamic edged weapons, armour and helmets, from early pieces to 19th-century military swords, including Japanese swords and fittings. Makers’ marks, the condition of the blade and the originality of hilt and mounts decide value.",
+        "what": "Swords and daggers, Japanese swords and fittings (tsuba), armour and helmets, polearms, military accoutrements",
+        "prep": "Photos of the whole piece, blade marks or signatures, hilt and scabbard; overall and blade length",
+        "limit": "We do not handle firearms of any age, ammunition, or any item restricted under California law"
       }
     },
-    "directory": "All departments A–Z"
+    "directory": "All departments A–Z",
+    "valuations": "Valuations"
   }
 }

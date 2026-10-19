@@ -18,6 +18,12 @@ export const CATEGORY_LABEL = {
   western: '欧美家具与银器',
   euro_ceramics: '欧洲陶瓷与玻璃',
   coins: '钱币与勋章',
+  old_masters: '古典大师与欧洲绘画',
+  clocks: '座钟与仪器',
+  interiors: '室内陈设',
+  antiquities: '古代文物（埃及、希腊、罗马等）',
+  african_oceanic: '非洲与大洋洲艺术',
+  arms_armour: '刀剑与盔甲（不收枪械）',
   other: '其他',
 } as const;
 

@@ -198,7 +198,13 @@
       "western": "Artes decorativas europeas y americanas",
       "coins": "Monedas y medallas",
       "modern_art": "Arte moderno y contemporáneo",
-      "euro_ceramics": "Cerámica y vidrio europeos"
+      "euro_ceramics": "Cerámica y vidrio europeos",
+      "old_masters": "Maestros antiguos y arte europeo",
+      "clocks": "Relojes e instrumentos",
+      "interiors": "Interiorismo",
+      "antiquities": "Antigüedades clásicas",
+      "african_oceanic": "Arte africano y de Oceanía",
+      "arms_armour": "Armas y armaduras"
     },
     "grade": "Calificación"
   },
@@ -364,8 +370,57 @@
         "what": "Colecciones completas, contenidos de viviendas y herencias de todos los departamentos, para familias, albaceas y fideicomisarios",
         "prep": "Un inventario o fotos por estancias si los hay, registros de compra o tasaciones anteriores, y quién está autorizado para consignar",
         "limit": "—"
+      },
+      "old-masters-european-art": {
+        "name": "Maestros Antiguos y Arte Europeo",
+        "short": "Pintura, dibujo y grabado europeo y británico anterior a 1900.",
+        "intro": "Pintura, dibujo y grabado de maestros antiguos y del siglo XIX, europeos y británicos. La atribución es la cuestión central: estudiamos el soporte, la preparación y la capa pictórica, el reverso de la obra y cualquier etiqueta, sello o inscripción, y decimos con claridad cuando una obra es del “círculo de”, “seguidor de” o “según” un maestro.",
+        "what": "Pintura y dibujo de maestros antiguos, pintura europea y británica del siglo XIX, acuarelas y grabados, retratos en miniatura",
+        "prep": "Fotos del anverso y del reverso, incluidos bastidor o tabla, etiquetas, sellos e inscripciones; medidas; atribuciones, exposiciones o publicaciones anteriores",
+        "limit": "No aceptamos obras con lagunas de procedencia o reclamaciones sin resolver para los años 1933–45"
+      },
+      "clocks": {
+        "name": "Relojes e Instrumentos",
+        "short": "Relojes de sobremesa, de chimenea, de viaje y de caja alta, barómetros e instrumentos.",
+        "intro": "Relojes ingleses y continentales de sobremesa, de chimenea, de viaje y de caja alta, además de barómetros e instrumentos científicos. El valor depende del relojero y de que la maquinaria, la esfera y la caja sean originales y hayan estado siempre juntas, por lo que examinamos las tres.",
+        "what": "Relojes de sobremesa, de chimenea, de viaje y de caja alta, reguladores, barómetros, instrumentos científicos y de navegación",
+        "prep": "Fotos de la esfera, la maquinaria (platina trasera y firma), la caja, la llave y el péndulo; si funciona; historial de mantenimiento",
+        "limit": "Recogemos los relojes de caja alta con nuestro equipo; no los envíe montados"
+      },
+      "interiors": {
+        "name": "Interiorismo",
+        "short": "Muebles, iluminación, espejos, alfombras y objetos decorativos para el hogar.",
+        "intro": "Muebles decorativos, iluminación, espejos, alfombras y los objetos que amueblan una estancia, desde piezas de época hasta buenas reproducciones posteriores. Estas subastas son idóneas para liquidaciones de herencias y mudanzas, y podemos recibir el contenido de una habitación completa.",
+        "what": "Muebles decorativos, lámparas y arañas, espejos, alfombras, estatuaria de jardín, cuadros y objetos decorativos",
+        "prep": "Fotos de cada pieza y de la estancia completa, medidas aproximadas, etiquetas o facturas; para alfombras, fotos del anverso y del reverso",
+        "limit": "Lámparas y arañas se venden como objetos decorativos; el comprador debe revisar la instalación eléctrica antes de usarlas"
+      },
+      "antiquities": {
+        "name": "Antigüedades Clásicas",
+        "short": "Antigüedades egipcias, griegas, romanas y de Oriente Próximo con procedencia documentada.",
+        "intro": "Obras de arte del antiguo Egipto, Grecia, Roma y Oriente Próximo. Solo vendemos antigüedades con documentos que acrediten que salieron legalmente de su país de origen, normalmente antes de 1970, y cotejamos cada objeto con los registros de arte robado antes de catalogarlo.",
+        "what": "Cerámica, vidrio, bronces y mármoles griegos y romanos, arte egipcio, sellos de Oriente Próximo, con historial documentado",
+        "prep": "Documentos de procedencia anteriores a 1970 (registros de colección, facturas, licencias de exportación o publicaciones); fotos desde varios ángulos",
+        "limit": "No aceptamos objetos sin procedencia documentada, ni objetos excavados recientemente o exportados ilegalmente"
+      },
+      "african-oceanic-art": {
+        "name": "Arte Africano y de Oceanía",
+        "short": "Escultura, máscaras y objetos de África y las islas del Pacífico.",
+        "intro": "Escultura, máscaras, textiles y objetos de uso de África y las islas del Pacífico. El valor depende de la antigüedad, las huellas de uso y el historial de colección, por lo que los registros de recolección y las fotografías antiguas importan tanto como el objeto.",
+        "what": "Máscaras y figuras, reposacabezas, taburetes y bastones, textiles, escudos, con historial de colección conocido",
+        "prep": "Fotos desde varios ángulos, incluida la base; historial de colección, etiquetas antiguas, fotografías o cartas",
+        "limit": "No aceptamos marfil, carey u otros materiales protegidos, restos humanos ni objetos sagrados reclamados por sus comunidades"
+      },
+      "arms-armour": {
+        "name": "Armas y Armaduras",
+        "short": "Espadas antiguas, armas blancas, armaduras y yelmos.",
+        "intro": "Armas blancas, armaduras y yelmos europeos, asiáticos e islámicos, desde piezas tempranas hasta espadas militares del siglo XIX, incluidas espadas japonesas y sus guarniciones. Las marcas del armero, el estado de la hoja y la originalidad de empuñadura y guarniciones determinan el valor.",
+        "what": "Espadas y dagas, espadas japonesas y guarniciones (tsuba), armaduras y yelmos, armas de asta, equipo militar",
+        "prep": "Fotos de la pieza completa, marcas o firmas de la hoja, empuñadura y vaina; longitud total y de la hoja",
+        "limit": "No gestionamos armas de fuego de ninguna época, munición ni artículos restringidos por la ley de California"
       }
     },
-    "directory": "Todos los departamentos (A–Z)"
+    "directory": "Todos los departamentos (A–Z)",
+    "valuations": "Tasaciones"
   }
 }

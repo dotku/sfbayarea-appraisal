@@ -198,7 +198,13 @@
       "western": "Arts décoratifs européens et américains",
       "coins": "Monnaies et médailles",
       "modern_art": "Art moderne et contemporain",
-      "euro_ceramics": "Céramiques et verre européens"
+      "euro_ceramics": "Céramiques et verre européens",
+      "old_masters": "Maîtres anciens et art européen",
+      "clocks": "Horlogerie et instruments",
+      "interiors": "Intérieurs",
+      "antiquities": "Archéologie",
+      "african_oceanic": "Arts d’Afrique et d’Océanie",
+      "arms_armour": "Armes et armures"
     },
     "grade": "Note"
   },
@@ -364,8 +370,57 @@
         "what": "Collections entières, contenus de maisons et successions, tous départements confondus, pour les familles, exécuteurs testamentaires et fiduciaires",
         "prep": "Un inventaire ou des photos pièce par pièce si possible, les justificatifs d'achat ou expertises antérieures, et l'identité de la personne habilitée à confier les biens",
         "limit": "—"
+      },
+      "old-masters-european-art": {
+        "name": "Maîtres Anciens et Art Européen",
+        "short": "Peintures, dessins et estampes européens et britanniques antérieurs à 1900.",
+        "intro": "Peintures, dessins et estampes de maîtres anciens et du XIXe siècle, européens et britanniques. L’attribution est la question centrale : nous étudions le support, la préparation et la couche picturale, le revers de l’œuvre et toute étiquette, cachet ou inscription, et nous indiquons clairement lorsqu’une œuvre relève de « l’entourage de », d’un « suiveur de » ou est exécutée « d’après » un maître.",
+        "what": "Peintures et dessins de maîtres anciens, peintures européennes et britanniques du XIXe siècle, aquarelles et estampes, portraits miniatures",
+        "prep": "Photos de la face et du revers, y compris châssis ou panneau, étiquettes, cachets et inscriptions ; dimensions ; attributions, expositions ou publications antérieures",
+        "limit": "Nous n’acceptons pas d’œuvres présentant des lacunes de provenance ou des revendications non résolues pour les années 1933–45"
+      },
+      "clocks": {
+        "name": "Horlogerie et Instruments",
+        "short": "Pendules de table, de cheminée, de voyage et de parquet, baromètres et instruments.",
+        "intro": "Pendules anglaises et continentales de table, de cheminée, de voyage et de parquet, ainsi que baromètres et instruments scientifiques. La valeur dépend de l’horloger et de l’originalité du mouvement, du cadran et de la caisse, et du fait qu’ils aient toujours été réunis : nous examinons les trois.",
+        "what": "Pendules de table, de cheminée, de voyage et de parquet, régulateurs, baromètres, instruments scientifiques et de navigation",
+        "prep": "Photos du cadran, du mouvement (platine arrière et signature), de la caisse, de la clé et du balancier ; état de marche ; historique d’entretien",
+        "limit": "Les horloges de parquet sont enlevées par notre équipe ; merci de ne pas les expédier montées"
+      },
+      "interiors": {
+        "name": "Intérieurs",
+        "short": "Mobilier, luminaires, miroirs, tapis et objets décoratifs pour la maison.",
+        "intro": "Mobilier décoratif, luminaires, miroirs, tapis et objets qui meublent une pièce, des pièces d’époque aux bonnes reproductions plus tardives. Ces ventes conviennent aux successions et aux déménagements, et nous pouvons reprendre le contenu d’une pièce entière.",
+        "what": "Mobilier décoratif, lustres et lampes, miroirs, tapis, statuaire de jardin, tableaux et objets décoratifs",
+        "prep": "Photos de chaque pièce et de l’ensemble de la pièce, dimensions approximatives, étiquettes ou factures ; pour les tapis, photos de l’endroit et de l’envers",
+        "limit": "Lampes et lustres sont vendus comme objets décoratifs ; l’acheteur doit faire vérifier l’installation électrique avant usage"
+      },
+      "antiquities": {
+        "name": "Archéologie",
+        "short": "Antiquités égyptiennes, grecques, romaines et du Proche-Orient à provenance documentée.",
+        "intro": "Œuvres d’art de l’Égypte ancienne, de la Grèce, de Rome et du Proche-Orient. Nous ne vendons que des antiquités dont les documents attestent la sortie légale du pays d’origine, normalement avant 1970, et chaque objet est vérifié dans les registres d’œuvres volées avant d’être catalogué.",
+        "what": "Céramiques, verres, bronzes et marbres grecs et romains, art égyptien, sceaux du Proche-Orient, avec historique documenté",
+        "prep": "Documents de provenance antérieurs à 1970 (archives de collection, factures, licences d’exportation ou publications) ; photos sous plusieurs angles",
+        "limit": "Nous n’acceptons pas d’objets sans provenance documentée, ni d’objets récemment fouillés ou exportés illégalement"
+      },
+      "african-oceanic-art": {
+        "name": "Arts d’Afrique et d’Océanie",
+        "short": "Sculptures, masques et objets d’Afrique et des îles du Pacifique.",
+        "intro": "Sculptures, masques, textiles et objets d’usage d’Afrique et des îles du Pacifique. La valeur repose sur l’ancienneté, les traces d’usage et l’historique de collection : les relevés de collecte sur le terrain et les photographies anciennes comptent autant que l’objet lui-même.",
+        "what": "Masques et statues, appuie-nuques, sièges et bâtons, textiles, boucliers, avec un historique de collection connu",
+        "prep": "Photos sous plusieurs angles, y compris la base ; historique de collection, anciennes étiquettes, photographies ou lettres",
+        "limit": "Nous n’acceptons ni ivoire, ni écaille ou autres matières protégées, ni restes humains, ni objets sacrés revendiqués par leurs communautés"
+      },
+      "arms-armour": {
+        "name": "Armes et Armures",
+        "short": "Épées anciennes, armes blanches, armures et casques.",
+        "intro": "Armes blanches, armures et casques européens, asiatiques et islamiques, des pièces anciennes aux sabres militaires du XIXe siècle, y compris sabres japonais et garnitures. Les poinçons, l’état de la lame et l’originalité de la poignée et des garnitures déterminent la valeur.",
+        "what": "Épées et dagues, sabres japonais et garnitures (tsuba), armures et casques, armes d’hast, équipement militaire",
+        "prep": "Photos de la pièce entière, des marques ou signatures de la lame, de la poignée et du fourreau ; longueur totale et de la lame",
+        "limit": "Nous ne traitons aucune arme à feu, quelle que soit l’époque, ni munitions, ni objets restreints par la loi californienne"
       }
     },
-    "directory": "Tous les départements de A à Z"
+    "directory": "Tous les départements de A à Z",
+    "valuations": "Expertises"
   }
 }
